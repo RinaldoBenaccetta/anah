@@ -1,5 +1,7 @@
 require('pretty-error').start()
 
+const util = require('util')
+
 // const register = require('./lib/register')
 // const glob = require('globby')
 // const option = require('./test/fixtures/option')
@@ -88,21 +90,55 @@ require('pretty-error').start()
 
 // mapLoop()
 
+// const options = {
+//   pages: './test/fixtures/pages/',
+//   partials: './test/fixtures/partials',
+//   layouts: './test/fixtures/layouts/',
+//   helpers: './test/fixtures/helpers',
+//   datas: './test/fixtures/data/'
+// }
+
+// const processOptions = require('./lib/process/processPaths')
+
+// const logOptions = async (options) => {
+//   processOptions(options)
+//     .then((option) => console.log('log : ', option))
+//     .catch((error) => console.error(error))
+// }
+
+// logOptions(options)
+
 const options = {
   pages: './test/fixtures/pages/',
   partials: './test/fixtures/partials',
   layouts: './test/fixtures/layouts/',
-  helpers: './test/fixtures/helpers'
-  // datas: './test/fixtures/data/'
+  helpers: './test/fixtures/helpers',
+  datas: './test/fixtures/data/**/*.{yml,json}'
 }
 
-const processOptions = require('./lib/process/processPaths')
+const getDatas = require('./lib/getDatas')
 
-const logOptions = async (options) => {
-  processOptions(options)
-    .then(option => console.log('log : ', option))
-    .catch(error => console.error(error)
-    )
+const testLoadFiles = async (options) => {
+  console.log(
+    'test : ',
+    util.inspect(await getDatas(options), { showHidden: false, depth: null })
+  )
 }
 
-logOptions(options)
+testLoadFiles(options)
+
+const test = {
+  main: [
+    { page: 'index', text: 'Home', target: '_self' },
+    { page: 'example', text: 'Example', target: '_self' }
+  ],
+  persons: [
+    { name: 'Nils', age: 20 },
+    { name: 'Teddy', age: 10 },
+    { name: 'Nelson', age: 40 }
+  ],
+  dogs: [
+    { name: 'Sam', age: 3 },
+    { name: 'Rex', age: 5 }
+  ]
+}

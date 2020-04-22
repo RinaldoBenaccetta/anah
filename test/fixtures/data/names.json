@@ -1,16 +1,26 @@
 {
-    "persons": [
-        { 
-            "name": "Nils",
-            "age": 20
-        },
-        { 
-            "name": "Teddy",
-            "age": 10
-        },
-        { 
-            "name": "Nelson",
-            "age": 40
-        }
-    ]
+  "persons": [
+    {
+      "name": "Nils",
+      "age": 20
+    },
+    {
+      "name": "Teddy",
+      "age": 10
+    },
+    {
+      "name": "Nelson",
+      "age": 40
+    }
+  ],
+  "dogs": [
+    {
+      "name": "Sam",
+      "age": 3
+    },
+    {
+      "name": "Rex",
+      "age": 5
+    }
+  ]
 }
