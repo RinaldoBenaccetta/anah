@@ -1,0 +1,10 @@
+persons:
+  -
+    name: 'Jean'
+    age: 25
+  -
+    name: 'Jacques'
+    age: 15
+  -
+    name: 'Toto'
+    age: 45

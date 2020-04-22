@@ -1,0 +1,7 @@
+<nav>
+  <ul class="menu">
+    {{#each menu.main}}
+    <li {{#ifpage page}} class="active" {{/ifpage}}><a target="{{target}}" href="{{page}}.html" aria-label="{{page}}">{{text}}</a></li>
+    {{/each}}
+  </ul>
+</nav>

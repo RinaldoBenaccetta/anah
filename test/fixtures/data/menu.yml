@@ -1,0 +1,9 @@
+main:
+  -
+    page: 'index'
+    text: Home
+    target: _self
+  -
+    page: 'example'
+    text: Example
+    target: _self

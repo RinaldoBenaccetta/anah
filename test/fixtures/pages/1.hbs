@@ -1,0 +1,7 @@
+{{#each persons}}
+    {{#tobold}}Here is a list of person :{{/tobold}}
+
+    {{#tofancy}}
+        {{>person person=.}}
+    {{/tofancy}}
+{{/each}}
