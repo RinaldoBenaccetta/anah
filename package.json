@@ -22,6 +22,7 @@
     "typescript": "latest"
   },
   "dependencies": {
+    "chalk": "^4.0.0",
     "file-reader": "^1.1.1",
     "fs-extra": "^9.0.0",
     "globby": "^11.0.0",
