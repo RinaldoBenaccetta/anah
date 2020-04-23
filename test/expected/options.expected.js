@@ -6,5 +6,6 @@ module.exports = {
   // partials: './test/fixtures/partials/**/*.{hbs,html,md}',
   // layouts: './test/fixtures/layouts/**/*.{hbs,html,md}',
   helpers: './test/fixtures/helpers/**/*.js',
-  datas: './test/fixtures/data/**/*.{yml,json}'
+  datas: './test/fixtures/data/**/*.{yml,json}',
+  output: './tmp/'
 }
