@@ -1,4 +1,4 @@
-const processOptions = require('../../../lib/process/processPaths')
+const processOptions = require('../../../lib/process/processOptions')
 
 const fixture = require('../../fixtures/option')
 const expected = require('../../expected/options.expected')

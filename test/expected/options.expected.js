@@ -7,5 +7,6 @@ module.exports = {
   // layouts: './test/fixtures/layouts/**/*.{hbs,html,md}',
   helpers: './test/fixtures/helpers/**/*.js',
   datas: './test/fixtures/data/**/*.{yml,json}',
-  output: './tmp/'
+  output: './tmp/',
+  pagesRoot: './test/fixtures/pages/'
 }
