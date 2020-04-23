@@ -1,7 +1,7 @@
-const processOptions = require('../../lib/process/processPaths')
+const processOptions = require('../../../lib/process/processPaths')
 
-const fixture = require('../fixtures/option')
-const expected = require('../expected/options.expected')
+const fixture = require('../../fixtures/option')
+const expected = require('../../expected/options.expected')
 
 describe('processOptions', () => {
   test('with all options return options ready for glob', () => {

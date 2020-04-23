@@ -1,4 +1,4 @@
-const getFileName = require('../../lib/tools/getFileName')
+const getFileName = require('../../tools/getFileName')
 
 describe('getFileName', () => {
   test('with valid path return fileName', () => {

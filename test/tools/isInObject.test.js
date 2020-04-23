@@ -1,4 +1,4 @@
-const isInObject = require('../../lib/tools/isInObject')
+const isInObject = require('../../tools/isInObject')
 
 const fixture = require('../fixtures/option')
 

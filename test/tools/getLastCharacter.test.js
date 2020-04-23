@@ -1,4 +1,4 @@
-const getLastCharacter = require('../../lib/tools/getLastCharacter')
+const getLastCharacter = require('../../tools/getLastCharacter')
 
 describe('getLastCharacter', () => {
   test('with valid string return last character', () => {

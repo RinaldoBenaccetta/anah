@@ -1,4 +1,4 @@
-const getContent = require('../../lib/tools/getContent')
+const getContent = require('../../tools/getContent')
 
 const expected = require('../expected/partials/getContent.expected')
 
