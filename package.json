@@ -37,7 +37,8 @@
   "scripts": {
     "test": "jest",
     "testwatch": "jest --watchAll",
-    "exp": "node experiment"
+    "exp": "node experiment",
+    "lint": "eslint . --fix"
   },
   "author": "",
   "license": "ISC"
