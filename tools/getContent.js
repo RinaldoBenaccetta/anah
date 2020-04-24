@@ -18,11 +18,10 @@ module.exports = async (files) => {
  * @param {object} content
  */
 const toString = async (content) => {
-  Object.keys(content)
-    .forEach(async (key) => {
-      // this convert streams to string
-      content[key] = await vinylToString(content[key])
-    })
+  Object.keys(content).forEach(async (key) => {
+    // this convert streams to string
+    content[key] = await vinylToString(content[key])
+  })
 
   return content
 }
