@@ -17,8 +17,10 @@
     "eslint-plugin-standard": "latest",
     "jest": "latest",
     "jest-cli": "latest",
+    "legally": "^3.5.2",
     "prettier": "latest",
     "prettier-eslint": "latest",
+    "tldrlegal": "^1.0.11",
     "ts-jest": "latest",
     "typescript": "latest"
   },
@@ -39,8 +41,9 @@
     "test": "jest",
     "testwatch": "jest --watchAll",
     "exp": "node experiment",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "license-check": "legally && tldrlegal"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Rinaldo Benaccetta",
+  "license": "MIT"
 }
