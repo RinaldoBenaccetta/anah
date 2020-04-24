@@ -1,4 +1,4 @@
-require('pretty-error').start()
+// require('pretty-error').start()
 
 const util = require('util')
 
@@ -108,37 +108,41 @@ const util = require('util')
 
 // logOptions(options)
 
-const options = {
-  pages: './test/fixtures/pages/',
-  partials: './test/fixtures/partials',
-  layouts: './test/fixtures/layouts/',
-  helpers: './test/fixtures/helpers',
-  datas: './test/fixtures/data/**/*.{yml,json}'
+// const options = {
+//   pages: './test/fixtures/pages/',
+//   partials: './test/fixtures/partials',
+//   layouts: './test/fixtures/layouts/',
+//   helpers: './test/fixtures/helpers',
+//   datas: './test/fixtures/data/**/*.{yml,json}'
+// }
+
+// const getDatas = require('./lib/getDatas')
+
+// const testLoadFiles = async (options) => {
+//   console.log(
+//     'test : ',
+//     util.inspect(await getDatas(options), { showHidden: false, depth: null })
+//   )
+// }
+
+// testLoadFiles(options)
+
+// const anah = require('./index')
+
+const folders = {
+  pages: './html/pages',
+  partials: './html/partials',
+  helpers: './html/helpers',
+  layouts: './test/fixtures/layouts/**/*.{hbs,html}',
+  datas: './html/data'
 }
 
-const getDatas = require('./lib/getDatas')
+// anah.build(folders)
 
-const testLoadFiles = async (options) => {
-  console.log(
-    'test : ',
-    util.inspect(await getDatas(options), { showHidden: false, depth: null })
-  )
+const getLayouts = require('./lib/getLayouts')
+
+const testLoadLayouts = async (folders) => {
+  console.log('test : ', await getLayouts(folders))
 }
 
-testLoadFiles(options)
-
-const test = {
-  main: [
-    { page: 'index', text: 'Home', target: '_self' },
-    { page: 'example', text: 'Example', target: '_self' }
-  ],
-  persons: [
-    { name: 'Nils', age: 20 },
-    { name: 'Teddy', age: 10 },
-    { name: 'Nelson', age: 40 }
-  ],
-  dogs: [
-    { name: 'Sam', age: 3 },
-    { name: 'Rex', age: 5 }
-  ]
-}
+testLoadLayouts(folders)
