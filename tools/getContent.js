@@ -9,6 +9,7 @@ const vinylToString = require('vinyl-contents-tostring')
 module.exports = async (files) => {
   const content = await read(files) // this output a stream
   const output = await toString(content)
+
   return output
 }
 
