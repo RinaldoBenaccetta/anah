@@ -1,7 +1,7 @@
 {
   "name": "anah",
   "version": "0.0.1",
-  "type": "commonjs",
+  "type": "esm",
   "description": "Tool for converting handlebars to html.",
   "keywords": [
     "handlebars"

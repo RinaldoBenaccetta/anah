@@ -5,11 +5,7 @@
     "node": true,
     "jest": true
   },
-  "extends": [
-    "standard"
-    // "eslint:recommended",
-    // "plugin:node/recommended"
-  ],
+  "extends": ["standard", "eslint:recommended", "plugin:node/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
