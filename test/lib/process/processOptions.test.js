@@ -10,8 +10,15 @@ describe('processOptions', () => {
     )
   })
 
-  test.each([fixture.invalid])(
+  test.each([fixture.invalid.omitedPath])(
     'with omitted value throw an error',
+    (options) => {
+      return expect(processOptions(options)).rejects.toThrow()
+    }
+  )
+
+  test.each([fixture.invalid.invalidPath])(
+    'with invalid value throw an error',
     (options) => {
       return expect(processOptions(options)).rejects.toThrow()
     }

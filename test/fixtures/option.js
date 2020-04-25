@@ -7,68 +7,134 @@ const valid = {
   output: './tmp/'
 }
 
-const invalid = [
-  [
-    {
-      pages: './test/fixtures/pages/',
-      partials: './test/fixtures/partials',
-      layouts: './test/fixtures/layouts/',
-      helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/'
-      // output: './tmp/'
-    }
+const invalid = {
+  omitedPath: [
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/'
+        // output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        // datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        // helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        // layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        // partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        // pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ]
   ],
-  [
-    {
-      pages: './test/fixtures/pages/',
-      partials: './test/fixtures/partials',
-      layouts: './test/fixtures/layouts/',
-      helpers: './test/fixtures/helpers',
-      // datas: './test/fixtures/data/',
-      output: './tmp/'
-    }
-  ],
-  [
-    {
-      pages: './test/fixtures/pages/',
-      partials: './test/fixtures/partials',
-      layouts: './test/fixtures/layouts/',
-      // helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
-      output: './tmp/'
-    }
-  ],
-  [
-    {
-      pages: './test/fixtures/pages/',
-      partials: './test/fixtures/partials',
-      // layouts: './test/fixtures/layouts/',
-      helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
-      output: './tmp/'
-    }
-  ],
-  [
-    {
-      pages: './test/fixtures/pages/',
-      // partials: './test/fixtures/partials',
-      layouts: './test/fixtures/layouts/',
-      helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
-      output: './tmp/'
-    }
-  ],
-  [
-    {
-      // pages: './test/fixtures/pages/',
-      partials: './test/fixtures/partials',
-      layouts: './test/fixtures/layouts/',
-      helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
-      output: './tmp/'
-    }
+  invalidPath: [
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: 42
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: null,
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: true,
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: './test/fixtures/partials',
+        layouts: ['first',
+          'second',
+          'third'],
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: './test/fixtures/pages/',
+        partials: { first: 1, second: 2 },
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ],
+    [
+      {
+        pages: false,
+        partials: './test/fixtures/partials',
+        layouts: './test/fixtures/layouts/',
+        helpers: './test/fixtures/helpers',
+        datas: './test/fixtures/data/',
+        output: './tmp/'
+      }
+    ]
   ]
-]
+}
 
 module.exports = {
   valid,
