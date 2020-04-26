@@ -6,8 +6,6 @@ const expected = require('../../expected/lib/process/saveFile.expected')
 
 describe('saveFile', () => {
   test('with correct values, save the file and return the destination folder', async () => {
-    console.log(fixture.sourcePage)
-
     // mock fs-extra's outputFile function
     fse.outputFile = jest.fn()
 
