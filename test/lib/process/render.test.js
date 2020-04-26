@@ -2,7 +2,7 @@ const render = require('../../../lib/process/render')
 const compileTemplate = require('../../../lib/process/compileTemplate')
 
 const compileFixture = require('../../fixtures/lib/process/compileTemplate.fixture')
-const renderFixture = require('../../fixtures/lib/getData.fixture')
+const renderFixture = require('../../fixtures/lib/process/render.fixture')
 const expected = require('../../expected/lib/process/render.expected')
 
 describe('render', () => {

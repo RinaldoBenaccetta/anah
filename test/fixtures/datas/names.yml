@@ -1,0 +1,7 @@
+persons:
+  - name: "Joe"
+    age: 25
+  - name: "Frank"
+    age: 15
+  - name: "John"
+    age: 45
