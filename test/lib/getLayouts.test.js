@@ -7,53 +7,44 @@ describe('getLayouts', () => {
   console.warn = jest.fn()
 
   test('With a path with at least a default layout, return the layouts.', async () => {
-    const rawOptions = {
-      // ! folders must be from root of the app and not from the test himself.
-      // TODO : add markdown support.
-      layouts: './test/fixtures/layouts/'
-    }
-
     const folders = {
       // ! folders must be from root of the app and not from the test himself.
       // TODO : add markdown support.
-      layouts: './test/fixtures/layouts/**/*.{html,hbs}'
+      layouts: './test/fixtures/layouts/**/*.{html,hbs}',
+      raw: {
+        layouts: './test/fixtures/layouts/'
+      }
     }
-    const layouts = await getLayouts(folders, rawOptions)
+    const layouts = await getLayouts(folders)
 
     expect(layouts).toStrictEqual(expected.layouts)
   })
 
   test('With a folder that not contain default template, log a warning.', async () => {
-    const rawOptions = {
-      // ! folders must be from root of the app and not from the test himself.
-      // TODO : add markdown support.
-      layouts: './test/fixtures/layouts/without-default/'
-    }
-
     const folders = {
       // ! folders must be from root of the app and not from the test himself.
       // TODO : add markdown support.
-      layouts: './test/fixtures/layouts/without-default/**/*.{html,hbs}'
+      layouts: './test/fixtures/layouts/without-default/**/*.{html,hbs}',
+      raw: {
+        layouts: './test/fixtures/layouts/without-default/'
+      }
     }
 
-    await getLayouts(folders, rawOptions)
+    await getLayouts(folders)
 
     expect(console.warn).toHaveBeenCalled()
   })
 
   test('With a folder that contain no template, throw an error.', () => {
-    const rawOptions = {
-      // ! folders must be from root of the app and not from the test himself.
-      // TODO : add markdown support.
-      layouts: './test/fixtures/layouts/empty/'
-    }
-
     const folders = {
       // ! folders must be from root of the app and not from the test himself.
       // TODO : add markdown support.
-      layouts: './test/fixtures/layouts/empty/**/*.{html,hbs}'
+      layouts: './test/fixtures/layouts/empty/**/*.{html,hbs}',
+      raw: {
+        layouts: './test/fixtures/layouts/empty/'
+      }
     }
 
-    return expect(getLayouts(folders, rawOptions)).rejects.toThrow()
+    return expect(getLayouts(folders)).rejects.toThrow()
   })
 })
