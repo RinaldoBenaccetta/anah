@@ -10,15 +10,14 @@ describe('registerHelpers', () => {
     // mock console.warn
     console.warn = jest.fn()
 
-    const filteredOptions = {
-      helpers: './test/fixtures/lib/registerHelpers/**/*.js'
-    }
-
     const options = {
-      helpers: './test/fixtures/lib/registerHelpers/'
+      helpers: './test/fixtures/lib/registerHelpers/**/*.js',
+      raw: {
+        helpers: './test/fixtures/lib/registerHelpers/'
+      }
     }
 
-    await registerHelpers(filteredOptions, options)
+    await registerHelpers(options)
 
     expect(handlebars.registerHelper).toHaveBeenCalledWith(expected.helpers)
     expect(console.warn).toHaveBeenCalledTimes(1)
