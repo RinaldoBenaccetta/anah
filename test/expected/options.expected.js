@@ -8,5 +8,13 @@ module.exports = {
   helpers: './test/fixtures/helpers/**/*.js',
   datas: './test/fixtures/data/**/*.{yml,json}',
   output: './tmp/',
-  pagesRoot: './test/fixtures/pages/'
+  pagesRoot: './test/fixtures/pages/',
+  raw: {
+    datas: './test/fixtures/data/',
+    helpers: './test/fixtures/helpers',
+    layouts: './test/fixtures/layouts/',
+    output: './tmp/',
+    pages: './test/fixtures/pages/',
+    partials: './test/fixtures/partials'
+  }
 }
