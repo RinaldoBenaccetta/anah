@@ -7,15 +7,14 @@ describe('getDatas', () => {
     // mock console.warn
     console.warn = jest.fn()
 
-    const files = {
-      datas: './test/fixtures/datas/**/*.{yml,json}'
-    }
-
     const options = {
-      datas: './test/fixtures/datas/'
+      datas: './test/fixtures/datas/**/*.{yml,json}',
+      raw: {
+        datas: './test/fixtures/datas/'
+      }
     }
 
-    const datas = await getDatas(files, options)
+    const datas = await getDatas(options)
 
     expect(datas).toStrictEqual(expected.datas)
     expect(console.warn).toHaveBeenCalledTimes(2)
@@ -24,15 +23,14 @@ describe('getDatas', () => {
     // mock console.warn
     console.warn = jest.fn()
 
-    const files = {
-      datas: './test/fixtures/datas/empty/**/*.{yml,json}'
-    }
-
     const options = {
-      datas: './test/fixtures/datas/empty/'
+      datas: './test/fixtures/datas/empty/**/*.{yml,json}',
+      raw: {
+        datas: './test/fixtures/datas/empty/'
+      }
     }
 
-    await getDatas(files, options)
+    await getDatas(options)
 
     expect(console.warn).toHaveBeenCalled()
   })
