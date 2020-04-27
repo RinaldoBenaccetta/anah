@@ -15,8 +15,6 @@ describe('reisterPartials', () => {
       partials: './test/fixtures/lib/registerPartials/subfolder/'
     }
 
-    // handlebars.registerPartial.mockClear()
-
     return expect(registerPartials(filteredOptions, options)).rejects.toThrow()
   })
 
