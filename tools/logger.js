@@ -5,7 +5,8 @@ const colors = {
   warning: chalk.yellowBright,
   infoPrefix: chalk.blue.bgWhite,
   info: chalk.cyanBright,
-  error: chalk.black.bgRedBright
+  errorPrefix: chalk.black.bgRedBright,
+  error: chalk.redBright
 }
 
 const warning = (message) => {
@@ -17,7 +18,8 @@ const info = (message) => {
 }
 
 const error = (message) => {
-  console.error(colors.error('!!!') + message.stack)
+  // console.error(colors.error('!!!') + message.stack)
+  console.error(colors.errorPrefix('!!!') + ' ' + colors.error(message))
 }
 
 module.exports = {
