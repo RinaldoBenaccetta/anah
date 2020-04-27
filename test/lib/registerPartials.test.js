@@ -6,16 +6,15 @@ const expected = require('../expected/lib/registerPartials.expected')
 describe('reisterPartials', () => {
   test('With partials that include a partial named body, throw an error', () => {
     // TODO : add support of markdown
-    const filteredOptions = {
-      partials: './test/fixtures/lib/registerPartials/**/*.{html,hbs}'
-      // This folder include a body named partial.
-    }
-
     const options = {
-      partials: './test/fixtures/lib/registerPartials/subfolder/'
+      partials: './test/fixtures/lib/registerPartials/**/*.{html,hbs}',
+      // This folder include a body named partial.,
+      raw: {
+        partials: './test/fixtures/lib/registerPartials/subfolder/'
+      }
     }
 
-    return expect(registerPartials(filteredOptions, options)).rejects.toThrow()
+    return expect(registerPartials(options)).rejects.toThrow()
   })
 
   test("With partials that don't include body, register the partials with content", async () => {
@@ -23,16 +22,16 @@ describe('reisterPartials', () => {
     handlebars.registerPartial = jest.fn()
 
     // TODO : add support of markdown
-    const filteredOptions = {
-      partials: './test/fixtures/lib/registerPartials/subfolder/**/*.{html,hbs}'
-      // This folder don't include a body named partial.
-    }
-
     const options = {
-      partials: './test/fixtures/lib/registerPartials/subfolder/'
+      partials:
+        './test/fixtures/lib/registerPartials/subfolder/**/*.{html,hbs}',
+      // This folder don't include a body named partial.
+      raw: {
+        partials: './test/fixtures/lib/registerPartials/subfolder/'
+      }
     }
 
-    await registerPartials(filteredOptions, options)
+    await registerPartials(options)
 
     expect(handlebars.registerPartial).toHaveBeenCalledWith(expected.content)
   })
