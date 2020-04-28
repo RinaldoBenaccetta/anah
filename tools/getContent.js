@@ -1,7 +1,7 @@
-const fse = require('fs-extra')
 const globby = require('globby')
 const getFileName = require('./getFileName')
 const log = require('../tools/logger')
+const readContent = require('../tools/readContent')
 
 /**
  * @description
@@ -45,7 +45,7 @@ module.exports = async (folder, rawFolder) => {
  * that is the name of the file (without path and extension)
  * and the content of the file
  *
- * @param {string} file {description}
+ * @param {string} file The path of the file.
  * @param {string} rawFolder The raw provide folder.
  *
  * @return {object.<string, string>}
@@ -56,7 +56,8 @@ const getContent = async (file, rawFolder) => {
   const fileName = getFileName(file)
 
   isAlreadyParsed(fileName, rawFolder)
-  const content = await fse.readFile(file, 'utf8')
+  // const content = await fse.readFile(file, 'utf8')
+  const content = await readContent(file)
 
   output[fileName] = content
 
