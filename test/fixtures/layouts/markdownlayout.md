@@ -2,4 +2,4 @@
 
 ## Here is the page :
 
-{{\> body}}
+{{> body}}

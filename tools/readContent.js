@@ -17,7 +17,9 @@ module.exports = async (file) => {
   const content = await fse.readFile(file, 'utf8')
 
   if (isMarkdown(file)) {
-    return mdToHtml(content)
+    const toHtml = await mdToHtml(content)
+
+    return conservePartialTags(toHtml)
   }
 
   return content
@@ -34,4 +36,22 @@ module.exports = async (file) => {
  */
 const isMarkdown = (file) => {
   return path.extname(file) === '.md'
+}
+
+/**
+ * @function conservePartialTags
+ *
+ * @description
+ * Showdown transform markdown to HTML according to HTML entities.
+ * That say that markdown {{> something}} will become {{&gt; something}}.
+ * Handlebars don't understand that.
+ * This function assure that partials will work with markdown.
+ * {{&gt; something}} become {{> something}} again.
+ *
+ * @param  {string} string The string to transform.
+ *
+ * @return {string} Returns the string fixed, ready for Handlebars.
+ */
+const conservePartialTags = (string) => {
+  return string.replace(/{{&gt;([\w\s]+}})/g, '{{>$1')
 }
