@@ -5,9 +5,8 @@ const expected = require('../expected/lib/registerPartials.expected')
 
 describe('reisterPartials', () => {
   test('With partials that include a partial named body, throw an error', () => {
-    // TODO : add support of markdown
     const options = {
-      partials: './test/fixtures/lib/registerPartials/**/*.{html,hbs}',
+      partials: './test/fixtures/lib/registerPartials/**/*.{html,hbs,md}',
       // This folder include a body named partial.,
       raw: {
         partials: './test/fixtures/lib/registerPartials/subfolder/'
@@ -21,10 +20,9 @@ describe('reisterPartials', () => {
     // mock handlebars.registerPartial
     handlebars.registerPartial = jest.fn()
 
-    // TODO : add support of markdown
     const options = {
       partials:
-        './test/fixtures/lib/registerPartials/subfolder/**/*.{html,hbs}',
+        './test/fixtures/lib/registerPartials/subfolder/**/*.{html,hbs,md}',
       // This folder don't include a body named partial.
       raw: {
         partials: './test/fixtures/lib/registerPartials/subfolder/'
