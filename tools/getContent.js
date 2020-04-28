@@ -56,10 +56,9 @@ const getContent = async (file, rawFolder) => {
   const fileName = getFileName(file)
 
   isAlreadyParsed(fileName, rawFolder)
-  // const content = await fse.readFile(file, 'utf8')
-  const content = await readContent(file)
+  const fileContent = await readContent(file)
 
-  output[fileName] = content
+  output[fileName] = fileContent.content
 
   return output
 }

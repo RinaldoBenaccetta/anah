@@ -4,16 +4,21 @@ const expected = require('../expected/tools/readContent.expected')
 
 describe('readContent', () => {
   test('With a path to a non-markdown file, return the content of the file.', async () => {
-    const htmlPath = './test/fixtures/partials/holla.html'
-    const txtPath = './test/fixtures/partials/text.txt'
+    const htmlPath = './test/fixtures/pages/holla.html'
+    const txtPath = './test/fixtures/pages/text.txt'
 
-    expect(await readContent(htmlPath)).toBe(expected.valid.html)
-    expect(await readContent(txtPath)).toBe(expected.valid.txt)
+    const html = await readContent(htmlPath)
+
+    const txt = await readContent(txtPath)
+
+    expect(html).toStrictEqual(expected.valid.html)
+    expect(txt).toStrictEqual(expected.valid.txt)
   })
 
   test('With a path to a markdown file, return the content of the markdown file converted to HTML.', async () => {
-    const mdPath = './test/fixtures/partials/hello.md'
+    const mdPath = './test/fixtures/pages/hello.md'
+    const markdown = await readContent(mdPath)
 
-    expect(await readContent(mdPath)).toBe(expected.valid.md)
+    expect(markdown).toStrictEqual(expected.valid.md)
   })
 })

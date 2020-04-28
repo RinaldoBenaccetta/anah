@@ -11,8 +11,6 @@ describe('getPages', () => {
   test('Given a path return an object with content and path of the file.', async () => {
     const pages = await getPages(path)
 
-    console.log(pages)
-
     expect(pages).toStrictEqual(expected.pages)
   })
 })

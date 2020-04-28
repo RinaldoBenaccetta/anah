@@ -1,9 +1,17 @@
 const path = require('path')
 const fse = require('fs-extra')
 const mdToHtml = require('../tools/mdToHtml')
+const parseFrontMatter = require('../tools/parseFrontMatter')
 
 /**
- * @function {function name}
+ * @typedef {object} content
+ *
+ * @property {string} content The content of the file, without the frontmatter.
+ * @property {object} data    The datas contained in the frontmatter.
+ */
+
+/**
+ * @function readContent
  *
  * @description
  * Return the content of the file provided.
@@ -11,18 +19,41 @@ const mdToHtml = require('../tools/mdToHtml')
  *
  * @param  {string} file The path of the file.
  *
- * @return {string} The content of the file.
+ * @return {content}
  */
 module.exports = async (file) => {
-  const content = await fse.readFile(file, 'utf8')
+  const fileContent = await fse.readFile(file, 'utf8')
+
+  const output = await contentExplode(fileContent)
 
   if (isMarkdown(file)) {
-    const toHtml = await mdToHtml(content)
+    const toHtml = await mdToHtml(output.content)
 
-    return conservePartialTags(toHtml)
+    output.content = conservePartialTags(toHtml)
+
+    return output
   }
 
-  return content
+  return output
+}
+
+/**
+ * @function contentExplode
+ *
+ * @description
+ * Return the datas from frontmatter and the content without frontmatter.
+ *
+ * @param  {string} fileContent The content of the file.
+ *
+ * @return {object} The content and datas from the file.
+ */
+const contentExplode = async (fileContent) => {
+  const frontMatter = await parseFrontMatter(fileContent)
+
+  return {
+    content: frontMatter.content,
+    data: frontMatter.data
+  }
 }
 
 /**
