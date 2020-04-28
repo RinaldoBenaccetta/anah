@@ -1,3 +1,3 @@
 module.exports = {
-  validMarkdown: '#Hello world!'
+  validMarkdown: '#Hello {{world}}!'
 }
