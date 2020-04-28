@@ -12,6 +12,11 @@ module.exports = {
     },
     { content: '{{holla}}', path: './test/fixtures/pages/4.html' },
     {
+      content:
+        '<h1 id="markdownpage">Markdown page.</h1>\n<p>I\'m a <em>markdown</em> page !</p>',
+      path: './test/fixtures/pages/5.md'
+    },
+    {
       content: '{{#tobold}}Holla!{{/tobold}}',
       path: './test/fixtures/pages/subfolder/3.hbs'
     }
