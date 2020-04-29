@@ -8,9 +8,9 @@ const showdown = require('showdown')
  * @description
  * Convert the provided markdown string to HTML.
  *
- * @param  {type} markdown The markdown string.
+ * @param  {string} markdown The markdown string.
  *
- * @return {type} The string converted to HTML.
+ * @return {string} The string converted to HTML.
  */
 module.exports = (markdown) => {
   const converter = new showdown.Converter()
