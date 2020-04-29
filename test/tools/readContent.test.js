@@ -21,4 +21,11 @@ describe('readContent', () => {
 
     expect(markdown).toStrictEqual(expected.valid.md)
   })
+
+  test('With a path to a markdown file and showdownOptions, return the content of the markdown file converted to HTML with showdownOptions.', async () => {
+    const mdPath = './test/fixtures/pages/hello.md'
+    const markdown = await readContent(mdPath, { noHeaderId: true })
+
+    expect(markdown).toStrictEqual(expected.valid.mdWithOptions)
+  })
 })

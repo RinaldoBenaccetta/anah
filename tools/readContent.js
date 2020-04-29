@@ -18,16 +18,17 @@ const parseFrontMatter = require('../tools/parseFrontMatter')
  * Translate markdown to HTML if the provided file's extension is .md
  *
  * @param  {string} file The path of the file.
+ * @param  {object} showdownOptions The options for Showdown.
  *
  * @return {content}
  */
-module.exports = async (file) => {
+module.exports = async (file, showdownOptions) => {
   const fileContent = await fse.readFile(file, 'utf8')
 
   const output = await contentExplode(fileContent)
 
   if (isMarkdown(file)) {
-    const toHtml = await mdToHtml(output.content)
+    const toHtml = await mdToHtml(output.content, showdownOptions)
 
     output.content = conservePartialTags(toHtml)
 

@@ -20,10 +20,11 @@ let alreadyParsed = []
  *
  * @param {string} folder The folder to gets content from.
  * @param {string} rawFolder The raw provide folder.
+ * @param {object} showdownOptions The options for Showdown.
  *
  * @return {object.<string, string>} An object with the contents.
  */
-module.exports = async (folder, rawFolder) => {
+module.exports = async (folder, rawFolder, showdownOptions) => {
   const glob = await globby(folder)
 
   const output = {}
@@ -31,7 +32,7 @@ module.exports = async (folder, rawFolder) => {
   for (const file of glob) {
     // add content from file to the returned object.
     // if undefined , nothing is pushed.
-    Object.assign(output, await getContent(file, rawFolder))
+    Object.assign(output, await getContent(file, rawFolder, showdownOptions))
   }
 
   return output
@@ -47,16 +48,17 @@ module.exports = async (folder, rawFolder) => {
  *
  * @param {string} file The path of the file.
  * @param {string} rawFolder The raw provide folder.
+ * @param {object} showdownOptions The options for Showdown.
  *
  * @return {object.<string, string>}
  * The content with the key that is the name of file.
  */
-const getContent = async (file, rawFolder) => {
+const getContent = async (file, rawFolder, showdownOptions) => {
   const output = {}
   const fileName = getFileName(file)
 
   isAlreadyParsed(fileName, rawFolder)
-  const fileContent = await readContent(file)
+  const fileContent = await readContent(file, showdownOptions)
 
   output[fileName] = fileContent.content
 

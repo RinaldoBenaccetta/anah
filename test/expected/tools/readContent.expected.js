@@ -18,6 +18,14 @@ module.exports = {
         title: 'markdown',
         slug: 'home'
       }
+    },
+    mdWithOptions: {
+      content:
+        "<h1>Markdown page.</h1>\n<p>Hello!\nI'm a <em>markdown</em> page !</p>",
+      data: {
+        title: 'markdown',
+        slug: 'home'
+      }
     }
   }
 }
