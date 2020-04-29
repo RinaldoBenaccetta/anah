@@ -8,8 +8,9 @@ const expected = require('../../expected/lib/process/render.expected')
 describe('render', () => {
   test('providing valid page source and layouts, return an expected rendered page', async () => {
     const compiledPage = await compileTemplate(
-      compileFixture.source,
-      compileFixture.layouts
+      compileFixture.withoutProvidedLayout.source,
+      compileFixture.withoutProvidedLayout.layouts,
+      compileFixture.withoutProvidedLayout.options
     )
     const renderedPage = await render(renderFixture, compiledPage)
 
