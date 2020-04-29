@@ -1,7 +1,5 @@
 const showdown = require('showdown')
 
-// TODO :  Add showdown options. At least for the flavor of markdown.
-
 /**
  * @function mdToHtml
  *
