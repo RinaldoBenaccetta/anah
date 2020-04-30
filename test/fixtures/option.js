@@ -3,7 +3,7 @@ const valid = {
   partials: './test/fixtures/partials', // should deal with omitted end slash
   layouts: './test/fixtures/layouts/',
   helpers: './test/fixtures/helpers',
-  datas: './test/fixtures/data/',
+  datas: './test/fixtures/datas/',
   output: './tmp/'
 }
 

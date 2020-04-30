@@ -1,9 +1,11 @@
 ---
 title: markdown
-slug: home
+who: you
+layout: markdownlayout
 ---
 
 # Markdown page.
 
-Hello!
+Hello {{who}}!
+
 I'm a _markdown_ page !

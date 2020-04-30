@@ -18,13 +18,13 @@ module.exports = {
     },
     {
       content:
-        '<h1 id="markdownpage">Markdown page.</h1>\n<p>Hello!\nI\'m a <em>markdown</em> page !</p>',
-      data: { title: 'markdown', slug: 'home' },
+        '<h1 id="markdownpage">Markdown page.</h1>\n<p>Hello {{who}}!</p>\n<p>I\'m a <em>markdown</em> page !</p>',
+      data: { title: 'markdown', who: 'you', layout: 'markdownlayout' },
       path: './test/fixtures/pages/hello.md'
     },
     {
-      content: '\r\n{{holla}}\r\n',
-      data: { title: 'holla', slug: 'home' },
+      content: '\r\n{{where}} {{holla}}\r\n',
+      data: { title: 'holla', where: 'home', layout: 'anotherlayout' },
       path: './test/fixtures/pages/holla.html'
     },
     {
