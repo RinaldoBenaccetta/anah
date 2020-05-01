@@ -1,5 +1,5 @@
 module.exports = {
-  datas: {
+  datasYmlAndJson: {
     dogs: [
       {
         age: 3,

@@ -16,9 +16,23 @@ describe('getDatas', () => {
 
     const datas = await getDatas(options)
 
-    expect(datas).toStrictEqual(expected.datas)
+    expect(datas).toStrictEqual(expected.datasYmlAndJson)
     expect(console.warn).toHaveBeenCalledTimes(2)
   })
+
+  test('With provided data folder serching all files, return only datas from yml and json.', async () => {
+    const options = {
+      datas: './test/fixtures/datas/**/*',
+      raw: {
+        datas: './test/fixtures/datas/'
+      }
+    }
+
+    const datas = await getDatas(options)
+
+    expect(datas).toStrictEqual(expected.datasYmlAndJson)
+  })
+
   test('With provided data folder that not contain data files, should log a warn.', async () => {
     // mock console.warn
     console.warn = jest.fn()
