@@ -37,7 +37,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --no-cache --collectCoverageFrom=lib/**/*.js",
     "testwatch": "jest --watchAll",
     "exp": "node experiment",
     "lint": "eslint . --fix",
