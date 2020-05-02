@@ -30,16 +30,16 @@
     "globby": "^11.0.0",
     "gray-matter": "^4.0.2",
     "handlebars": "^4.7.6",
-    "handlebars-echo": "^1.0.6",
-    "handlebars-helpers": "^0.10.0",
     "is-valid-path": "^0.1.1",
     "load-json-file": "^6.2.0",
     "load-yaml-file": "^0.2.0",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "typical": "^6.0.0"
   },
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --no-cache --collectCoverageFrom=lib/**/*.js",
+    "depcheck ": "depcheck",
     "testwatch": "jest --watchAll",
     "exp": "node experiment",
     "lint": "eslint . --fix",
