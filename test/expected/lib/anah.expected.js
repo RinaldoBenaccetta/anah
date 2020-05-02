@@ -19,7 +19,10 @@ module.exports = {
         dogs: [
           { name: 'Sam', age: 3 },
           { name: 'Rex', age: 5 }
-        ]
+        ],
+        global: {
+          relative: '1.html'
+        }
       }
     },
     {
@@ -40,7 +43,10 @@ module.exports = {
         dogs: [
           { name: 'Sam', age: 3 },
           { name: 'Rex', age: 5 }
-        ]
+        ],
+        global: {
+          relative: '2.html'
+        }
       }
     },
     {
@@ -61,7 +67,10 @@ module.exports = {
         dogs: [
           { name: 'Sam', age: 3 },
           { name: 'Rex', age: 5 }
-        ]
+        ],
+        global: {
+          relative: '3.html'
+        }
       }
     },
     {
@@ -83,6 +92,9 @@ module.exports = {
           { name: 'Sam', age: 3 },
           { name: 'Rex', age: 5 }
         ],
+        global: {
+          relative: 'hello.html'
+        },
         who: 'you',
         layout: 'markdownlayout'
       }
@@ -105,6 +117,9 @@ module.exports = {
           { name: 'Sam', age: 3 },
           { name: 'Rex', age: 5 }
         ],
+        global: {
+          relative: 'holla.html'
+        },
         where: 'home',
         layout: 'anotherlayout'
       }
@@ -127,7 +142,10 @@ module.exports = {
         dogs: [
           { name: 'Sam', age: 3 },
           { name: 'Rex', age: 5 }
-        ]
+        ],
+        global: {
+          relative: 'subfolder/3.html'
+        }
       }
     }
   ]

@@ -4,7 +4,11 @@ module.exports = {
       first: 'hello',
       second: 'you',
       third: '!',
-      fourth: '4th'
-    }
+      fourth: '4th',
+      global: {
+        relative: 'subfolder/page.html'
+      }
+    },
+    path: './html/pages/subfolder/page.hbs'
   }
 }
