@@ -11,10 +11,6 @@ describe('mergeDatas', () => {
       fixture.datas.options
     )
 
-    console.log('log: ----------------------------')
-    console.log('log: mergedDatas', mergedDatas)
-    console.log('log: ----------------------------')
-
     expect(mergedDatas).toStrictEqual(expected.datas)
   })
 })
