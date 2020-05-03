@@ -4,14 +4,14 @@ const fixture = require('../fixtures/lib/getPaths.fixture')
 const expected = require('../expected/lib/getPaths.expected')
 
 describe('getPaths', () => {
-  describe('getRelativePath', () => {
-    test('With filePath and pagesRoot, return the relative path.', () => {
-      const relativePath = getPaths.geRelativePath(
+  describe('getRelatives', () => {
+    test('With filePath and pagesRoot, return the relative path, the folder depth and the root in an array.', () => {
+      const relativePath = getPaths.getRelatives(
         fixture.filePath,
         fixture.options
       )
 
-      expect(relativePath).toBe(expected.relativePath)
+      expect(relativePath).toStrictEqual(expected.relativePath)
     })
   })
 

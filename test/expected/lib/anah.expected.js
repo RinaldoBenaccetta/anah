@@ -21,7 +21,9 @@ module.exports = {
           { name: 'Rex', age: 5 }
         ],
         global: {
-          relative: '1.html'
+          relative: '1.html',
+          depth: 0,
+          root: ''
         }
       }
     },
@@ -45,7 +47,9 @@ module.exports = {
           { name: 'Rex', age: 5 }
         ],
         global: {
-          relative: '2.html'
+          relative: '2.html',
+          depth: 0,
+          root: ''
         }
       }
     },
@@ -69,7 +73,9 @@ module.exports = {
           { name: 'Rex', age: 5 }
         ],
         global: {
-          relative: '3.html'
+          relative: '3.html',
+          depth: 0,
+          root: ''
         }
       }
     },
@@ -93,7 +99,9 @@ module.exports = {
           { name: 'Rex', age: 5 }
         ],
         global: {
-          relative: 'hello.html'
+          relative: 'hello.html',
+          depth: 0,
+          root: ''
         },
         who: 'you',
         layout: 'markdownlayout'
@@ -118,7 +126,9 @@ module.exports = {
           { name: 'Rex', age: 5 }
         ],
         global: {
-          relative: 'holla.html'
+          relative: 'holla.html',
+          depth: 0,
+          root: ''
         },
         where: 'home',
         layout: 'anotherlayout'
@@ -144,7 +154,9 @@ module.exports = {
           { name: 'Rex', age: 5 }
         ],
         global: {
-          relative: 'subfolder/3.html'
+          relative: 'subfolder/3.html',
+          depth: 1,
+          root: '../'
         }
       }
     }
