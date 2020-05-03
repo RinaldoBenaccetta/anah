@@ -1,5 +1,6 @@
 const getDatas = require('../../lib/getDatas')
 
+const fixture = require('../fixtures/lib/getDatas.fixture')
 const expected = require('../expected/lib/getDatas.expected')
 
 describe('getDatas', () => {
@@ -7,27 +8,15 @@ describe('getDatas', () => {
     // mock console.warn
     console.warn = jest.fn()
 
-    const options = {
-      datas: './test/fixtures/datas/**/*.{yml,json}',
-      raw: {
-        datas: './test/fixtures/datas/'
-      }
-    }
-
+    const options = fixture.withYmlAndJsonSpecified
     const datas = await getDatas(options)
 
     expect(datas).toStrictEqual(expected.datasYmlAndJson)
     expect(console.warn).toHaveBeenCalledTimes(2)
   })
 
-  test('With provided data folder serching all files, return only datas from yml and json.', async () => {
-    const options = {
-      datas: './test/fixtures/datas/**/*',
-      raw: {
-        datas: './test/fixtures/datas/'
-      }
-    }
-
+  test('With provided data folder searching all files, return only datas from yml and json.', async () => {
+    const options = fixture.withNoExtensionSpecified
     const datas = await getDatas(options)
 
     expect(datas).toStrictEqual(expected.datasYmlAndJson)
@@ -37,12 +26,7 @@ describe('getDatas', () => {
     // mock console.warn
     console.warn = jest.fn()
 
-    const options = {
-      datas: './test/fixtures/datas/empty/**/*.{yml,json}',
-      raw: {
-        datas: './test/fixtures/datas/empty/'
-      }
-    }
+    const options = fixture.withNoDataFolderSpecified
 
     await getDatas(options)
 
