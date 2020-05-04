@@ -1,18 +1,12 @@
 module.exports = {
   withYmlAndJsonSpecified: {
-    datas: [
-      './test/fixtures/datas/**/*.{yml,json}',
-      '!./test/fixtures/datas/reserved/**/*.{yml,json}' // don't use reserved folder
-    ],
+    datas: './test/fixtures/datas/**/*.{yml,json}',
     raw: {
       datas: ''
     }
   },
   withNoExtensionSpecified: {
-    datas: [
-      './test/fixtures/datas/**/*',
-      '!./test/fixtures/datas/reserved/**/*' // don't use reserved folder
-    ],
+    datas: './test/fixtures/datas/**/*',
     raw: {
       datas: ''
     }
@@ -24,7 +18,7 @@ module.exports = {
     }
   },
   withReservedDataFolder: {
-    datas: './test/fixtures/datas/**/*.{yml,json}',
+    datas: './test/fixtures/datas-reserved/**/*.{yml,json}',
     raw: {
       datas: ''
     }
