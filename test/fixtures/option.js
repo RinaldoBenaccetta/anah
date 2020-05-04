@@ -17,6 +17,15 @@ const validWithDefaultOverride = {
   writeOutput: false // this option is true by default
 }
 
+const validWithOmittedSlash = {
+  pages: './test/fixtures/pages',
+  partials: './test/fixtures/partials',
+  layouts: './test/fixtures/layouts',
+  helpers: './test/fixtures/helpers',
+  datas: './test/fixtures/datas',
+  output: './tmp'
+}
+
 const invalid = {
   omitedPath: [
     {
@@ -125,5 +134,6 @@ const invalid = {
 module.exports = {
   valid,
   invalid,
-  validWithDefaultOverride
+  validWithDefaultOverride,
+  validWithOmittedSlash
 }

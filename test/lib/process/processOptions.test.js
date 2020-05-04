@@ -4,6 +4,12 @@ const fixture = require('../../fixtures/option')
 const expected = require('../../expected/options.expected')
 
 describe('processOptions', () => {
+  test('With omitted slash at end of paths in options, return options with slash added et end of paths.', () => {
+    return expect(
+      processOptions(fixture.validWithOmittedSlash)
+    ).resolves.toStrictEqual(expected.defaultWithOmittedSlash)
+  })
+
   test('with all options, and options with default no specified, return options ready for glob, with default options', () => {
     return expect(processOptions(fixture.valid)).resolves.toStrictEqual(
       expected.default
