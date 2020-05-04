@@ -7,6 +7,16 @@ const valid = {
   output: './tmp/'
 }
 
+const validWithDefaultOverride = {
+  pages: './test/fixtures/pages/',
+  partials: './test/fixtures/partials', // should deal with omitted end slash
+  layouts: './test/fixtures/layouts/',
+  helpers: './test/fixtures/helpers',
+  datas: './test/fixtures/datas/',
+  output: './tmp/',
+  writeOutput: false // this option is true by default
+}
+
 const invalid = {
   omitedPath: [
     {
@@ -114,5 +124,6 @@ const invalid = {
 
 module.exports = {
   valid,
-  invalid
+  invalid,
+  validWithDefaultOverride
 }

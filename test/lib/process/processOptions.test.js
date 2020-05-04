@@ -4,10 +4,16 @@ const fixture = require('../../fixtures/option')
 const expected = require('../../expected/options.expected')
 
 describe('processOptions', () => {
-  test('with all options return options ready for glob', () => {
+  test('with all options, and options with default no specified, return options ready for glob, with default options', () => {
     return expect(processOptions(fixture.valid)).resolves.toStrictEqual(
-      expected
+      expected.default
     )
+  })
+
+  test('with all options, and options with default specified, return options ready for glob, with user options instead of default ones', () => {
+    return expect(
+      processOptions(fixture.validWithDefaultOverride)
+    ).resolves.toStrictEqual(expected.user)
   })
 
   test.each([fixture.invalid.omitedPath])(
