@@ -9,18 +9,12 @@ describe('saveFile', () => {
     // mock fs-extra's outputFile function
     fse.outputFile = jest.fn()
 
-    const destination = await saveFile(
-      fixture.renderedPage,
-      fixture.sourcePage,
-      fixture.options
-    )
+    await saveFile(fixture.renderedPage, fixture.destination, fixture.options)
 
     // expect save with correct arguments
     expect(fse.outputFile).toHaveBeenCalledWith(
       expected.outputFile.destination,
       expected.outputFile.renderedPage
     )
-    // expect return correct destination
-    expect(destination).toBe(expected.destination)
   })
 })

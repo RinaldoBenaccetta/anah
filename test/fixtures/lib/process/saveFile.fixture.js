@@ -1,6 +1,6 @@
 module.exports = {
   renderedPage: 'Hello world!',
-  sourcePage: './html/pages/1.hbs',
+  destination: 'tmp/1.html',
   options: {
     pagesRoot: './html/pages/',
     output: 'tmp/'
