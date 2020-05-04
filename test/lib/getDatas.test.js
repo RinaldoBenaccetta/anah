@@ -32,4 +32,10 @@ describe('getDatas', () => {
 
     expect(console.warn).toHaveBeenCalled()
   })
+
+  test('With a provided data folder that contain the reserved data name global, throw an error.', () => {
+    const options = fixture.withReservedDataFolder
+
+    return expect(getDatas(options)).rejects.toThrow()
+  })
 })
