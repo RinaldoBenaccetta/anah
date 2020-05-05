@@ -1,6 +1,6 @@
 module.exports = {
   relativePath: {
-    relative: 'subfolder/myPage.html',
+    path: 'subfolder/myPage.html',
     depth: 1,
     root: '../'
   },

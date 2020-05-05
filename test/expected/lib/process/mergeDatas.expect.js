@@ -6,7 +6,7 @@ module.exports = {
       third: '!',
       fourth: '4th',
       global: {
-        relative: 'subfolder/page.html',
+        path: 'subfolder/page.html',
         depth: 1,
         root: '../'
       }
