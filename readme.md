@@ -147,25 +147,6 @@ persons:
     age: 15
 ```
 
-Write in tmp/subFolder/hello.html :
-
-```html
-<body>
-  <h1>I'm the title provided in front-matter of hello page!</h1>
-  <h2>Hello John Doe !</h2>
-  path to holla : ../holla.html
-</body>
-```
-
-Write in tmp/holla.html :
-
-```html
-<body>
-  <h1>I'm the title provided in front-matter of holla page!</h1>
-  <h2>Holla</h2>
-</body>
-```
-
 index.js :
 
 ```javascript
@@ -184,6 +165,25 @@ const compile = async (options) => {
 };
 
 compile(options);
+```
+
+Write in tmp/subFolder/hello.html :
+
+```html
+<body>
+  <h1>I'm the title provided in front-matter of hello page!</h1>
+  <h2>Hello John Doe !</h2>
+  path to holla : ../holla.html
+</body>
+```
+
+Write in tmp/holla.html :
+
+```html
+<body>
+  <h1>I'm the title provided in front-matter of holla page!</h1>
+  <h2>Holla</h2>
+</body>
 ```
 
 Returned output from _anah(options)_
