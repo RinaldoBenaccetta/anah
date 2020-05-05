@@ -1,16 +1,16 @@
 # Anah
 
-Handlebars to HTML compiler that accept HTML and markdown source.
+Handlebars to HTML compiler that accepts HTML and markdown sources.
 
 ## Features
 
-- Allow for markdown as sources for layouts, pages and partials. (converted with [showdown](https://github.com/showdownjs/showdown))
-- Use front-matter on both HTML and markdown sources. (parsed with [gray-matter](https://github.com/jonschlinkert/gray-matter))
+- Allows for markdown as source for layouts, pages and partials. (converted with [showdown](https://github.com/showdownjs/showdown))
+- Uses front-matter on both HTML and markdown sources. (parsed with [gray-matter](https://github.com/jonschlinkert/gray-matter))
 - Handlebar's features also useable in markdown files.
-- Allow for json and yaml files for datas.
-- Output an array of objects representing each compiled pages with their destination path, content and datas.
-- Save the compiled pages in destination folder.
-- Processed page's global datas accessible from template files : path from root, sub-folders depth from root, root prefix for menus.
+- Allows for json and yaml files for data.
+- Outputs an array of objects representing each compiled page with its destination path, content and data.
+- Saves the compiled pages in the destination folder.
+- The processed page's global data are accessible from template files : path from root, sub-folders depth from root and root prefix for menus.
 
 ## Quick example
 
@@ -167,7 +167,7 @@ const compile = async (options) => {
 compile(options);
 ```
 
-Write in tmp/subFolder/hello.html :
+Writes in tmp/subFolder/hello.html :
 
 ```html
 <body>
@@ -177,7 +177,7 @@ Write in tmp/subFolder/hello.html :
 </body>
 ```
 
-Write in tmp/holla.html :
+Writes in tmp/holla.html :
 
 ```html
 <body>
@@ -238,7 +238,7 @@ Returned output from _anah(options)_
 
 The output path will reproduce the path found in pages folder.
 By default, the output will be written to the output folder provided in options.
-The datas are these found in the datas folder merged with the frontmatter datas of the pages. Global datas are calculated by Anah and can be used in templates.
+The data are the ones found in the data folder merged with the front-matter data of the pages. Global data are calculated by Anah and can be used in templates.
 
 #### Options
 
@@ -247,11 +247,11 @@ The datas are these found in the datas folder merged with the frontmatter datas 
 **Type** : string
 
 The pages folder.
-The pages Can be markdown or HTML.
+The pages can be markdown or HTML.
 
-files with .md, .html and .hbs extension are accepted, other will be ignored.
+Files with .md, .html and .hbs extension are accepted, others will be ignored.
 
-Pages can content front-matter datas. The layout used by default is the one named _default_ in the layouts folder. Layout can be specified with _layout_ value in front-matter :
+Pages can content front-matter data. The layout used by default is the one named _default_ in the layouts folder. The layout can be specified with _layout_ value in front-matter :
 
 ```html
 ---
@@ -266,9 +266,9 @@ Hello world!
 **Type** : string
 
 The partials folder.
-The pages Can be markdown or HTML.
+The pages can be markdown or HTML.
 
-files with .md, .html and .hbs extensions are accepted, other will be ignored.
+Files with .md, .html and .hbs extensions are accepted, others will be ignored.
 
 ##### helpers
 
@@ -276,16 +276,16 @@ files with .md, .html and .hbs extensions are accepted, other will be ignored.
 
 The helpers folder.
 
-files with .js extensions are accepted, other will be ignored.
+Files with .js extensions are accepted, others will be ignored.
 
 ##### layouts
 
 **Type** : string
 
 The layouts folder.
-The pages Can be markdown or HTML.
+The pages can be markdown or HTML.
 
-files with .md, .html and .hbs extension are accepted, other will be ignored.
+Files with .md, .html and .hbs extension are accepted, others will be ignored.
 
 There must at least be one layout named _default_ in the folder.
 
@@ -294,9 +294,9 @@ There must at least be one layout named _default_ in the folder.
 **Type** : string
 
 The datas folder.
-The datas can be json or yaml files. If files with same names but one in json and the other in yaml, they will be mixed, but values in yaml will override the json values.
+The data can be json or yaml files. If two files with same names, one in json and the other one in yaml exist, they will be mixed, but the values in yaml will override the json values.
 
-Datas files can't be named _global_ ( E.g. : global.yml or global.json).
+Data files can't be named _global_ ( E.g. : global.yml or global.json).
 
 ##### output
 
@@ -334,4 +334,4 @@ options.helpersLibrary = [myLibrary, anOtherLibrary];
 
 The default options are the default options from showdown.
 
-The [showdown options](https://github.com/showdownjs/showdown/wiki/Showdown-Options).
+The showdown options can be found [here](https://github.com/showdownjs/showdown/wiki/Showdown-Options).
