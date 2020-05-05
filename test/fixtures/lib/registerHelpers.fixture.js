@@ -26,7 +26,7 @@ module.exports = {
     helpers: './test/fixtures/lib/registerHelpers/**/*.js',
     raw: {
       helpers: './test/fixtures/lib/registerHelpers/',
-      helpersLibrary: validLibraries
+      helpersLibraries: validLibraries
     }
   },
 
@@ -34,7 +34,7 @@ module.exports = {
     helpers: './test/fixtures/lib/registerHelpers/**/*.js',
     raw: {
       helpers: './test/fixtures/lib/registerHelpers/',
-      helpersLibrary: []
+      helpersLibraries: []
     }
   },
 
@@ -43,35 +43,35 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: true
+        helpersLibraries: true
       }
     },
     {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: {}
+        helpersLibraries: {}
       }
     },
     {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: 'library'
+        helpersLibraries: 'library'
       }
     },
     {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: 42
+        helpersLibraries: 42
       }
     },
     {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: false
+        helpersLibraries: false
       }
     }
   ],
@@ -81,7 +81,7 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: [
+        helpersLibraries: [
           {
             someHelper: () => {},
             anotherHelper: 'something' // throw an error because not a function.
@@ -93,7 +93,7 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: [
+        helpersLibraries: [
           {
             someHelper: () => {},
             anotherHelper: null // throw an error because not a function.
@@ -105,7 +105,7 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: [
+        helpersLibraries: [
           {
             someHelper: () => {},
             anotherHelper: 42 // throw an error because not a function.
@@ -117,7 +117,7 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: [
+        helpersLibraries: [
           {
             someHelper: () => {},
             anotherHelper: false // throw an error because not a function.
@@ -129,7 +129,7 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: [
+        helpersLibraries: [
           {
             someHelper: () => {},
             anotherHelper: {} // throw an error because not a function.
@@ -141,7 +141,7 @@ module.exports = {
       helpers: './test/fixtures/lib/registerHelpers/**/*.js',
       raw: {
         helpers: './test/fixtures/lib/registerHelpers/',
-        helpersLibrary: [
+        helpersLibraries: [
           {
             someHelper: () => {},
             anotherHelper: [] // throw an error because not a function.
