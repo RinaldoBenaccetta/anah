@@ -1,6 +1,8 @@
 # Anah
 
-Handlebars to HTML compiler that accepts HTML and markdown sources.
+[![Coverage Status](https://coveralls.io/repos/github/RinaldoBenaccetta/anah/badge.svg?branch=master)](https://coveralls.io/github/RinaldoBenaccetta/anah?branch=master)
+
+Handlebars to HTML compiler that accept HTML and markdown source.
 
 ## Features
 
