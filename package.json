@@ -38,7 +38,7 @@
     "test": "jest --coverage --no-cache --collectCoverageFrom=lib/**/*.js",
     "depcheck ": "depcheck",
     "testwatch": "jest --watchAll",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "exp": "node experiment",
     "lint": "eslint . --fix",
     "license-check": "legally && tldrlegal"
