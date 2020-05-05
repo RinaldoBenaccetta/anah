@@ -7,6 +7,7 @@
     "handlebars"
   ],
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "latest",
     "eslint-plugin-import": "latest",
@@ -37,6 +38,7 @@
     "test": "jest --coverage --no-cache --collectCoverageFrom=lib/**/*.js",
     "depcheck ": "depcheck",
     "testwatch": "jest --watchAll",
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
     "exp": "node experiment",
     "lint": "eslint . --fix",
     "license-check": "legally && tldrlegal"
