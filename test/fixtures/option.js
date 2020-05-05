@@ -5,7 +5,7 @@ const valid = {
   partials: './test/fixtures/partials', // should deal with omitted end slash
   layouts: './test/fixtures/layouts/',
   helpers: './test/fixtures/helpers',
-  datas: './test/fixtures/datas/',
+  data: './test/fixtures/datas/',
   output: './tmp/'
 }
 
@@ -14,7 +14,7 @@ const validWithDefaultOverride = {
   partials: './test/fixtures/partials', // should deal with omitted end slash
   layouts: './test/fixtures/layouts/',
   helpers: './test/fixtures/helpers',
-  datas: './test/fixtures/datas/',
+  data: './test/fixtures/datas/',
   output: './tmp/',
   writeOutput: false // this option is true by default
 }
@@ -24,7 +24,7 @@ const validWithOmittedSlash = {
   partials: './test/fixtures/partials',
   layouts: './test/fixtures/layouts',
   helpers: './test/fixtures/helpers',
-  datas: './test/fixtures/datas',
+  data: './test/fixtures/datas',
   output: './tmp'
 }
 
@@ -35,7 +35,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/'
+      data: './test/fixtures/data/'
       // output: './tmp/'
     },
     {
@@ -51,7 +51,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       // helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     },
     {
@@ -59,7 +59,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       // layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     },
     {
@@ -67,7 +67,7 @@ const invalid = {
       // partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     },
     {
@@ -75,7 +75,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     }
   ],
@@ -85,7 +85,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: 42
     },
     {
@@ -93,7 +93,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: null,
+      data: null,
       output: './tmp/'
     },
     {
@@ -101,7 +101,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: true,
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     },
     {
@@ -111,7 +111,7 @@ const invalid = {
         'second',
         'third'],
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     },
     {
@@ -119,7 +119,7 @@ const invalid = {
       partials: { first: 1, second: 2 },
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     },
     {
@@ -127,7 +127,7 @@ const invalid = {
       partials: './test/fixtures/partials',
       layouts: './test/fixtures/layouts/',
       helpers: './test/fixtures/helpers',
-      datas: './test/fixtures/data/',
+      data: './test/fixtures/data/',
       output: './tmp/'
     }
   ]
