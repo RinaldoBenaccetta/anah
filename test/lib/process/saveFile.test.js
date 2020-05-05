@@ -1,3 +1,5 @@
+'use strict'
+
 const saveFile = require('../../../lib/process/saveFile')
 const fse = require('fs-extra')
 

@@ -1,3 +1,5 @@
+'use strict'
+
 const registerPartials = require('../../lib/registerPartials')
 const handlebars = require('handlebars')
 

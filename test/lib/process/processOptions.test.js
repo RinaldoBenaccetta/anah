@@ -1,3 +1,5 @@
+'use strict'
+
 const processOptions = require('../../../lib/process/processOptions')
 
 const fixture = require('../../fixtures/option')

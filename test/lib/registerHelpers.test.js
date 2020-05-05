@@ -1,3 +1,5 @@
+'use strict'
+
 const registerHelpers = require('../../lib/registerHelpers')
 const handlebars = require('handlebars')
 

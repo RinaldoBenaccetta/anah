@@ -1,3 +1,5 @@
+'use strict'
+
 const getPaths = require('../../lib/getPaths.js')
 
 const fixture = require('../fixtures/lib/getPaths.fixture')

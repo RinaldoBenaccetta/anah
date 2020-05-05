@@ -1,3 +1,5 @@
+'use strict'
+
 const getPages = require('../../lib/getPages')
 
 const expected = require('../expected/lib/getPages.expected')

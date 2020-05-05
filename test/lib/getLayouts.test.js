@@ -1,3 +1,5 @@
+'use strict'
+
 const getLayouts = require('../../lib/getLayouts')
 
 const expected = require('../expected/lib/getLayouts.expected')

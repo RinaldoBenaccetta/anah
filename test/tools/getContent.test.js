@@ -1,3 +1,5 @@
+'use strict'
+
 const getContent = require('../../tools/getContent')
 
 const expected = require('../expected/partials/getContent.expected')

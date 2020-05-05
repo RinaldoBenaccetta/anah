@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * If the provided key is in object, return true.
  * Else return False.

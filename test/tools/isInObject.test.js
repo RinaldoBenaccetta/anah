@@ -1,3 +1,5 @@
+'use strict'
+
 const isInObject = require('../../tools/isInObject')
 
 const fixture = require('../fixtures/option')

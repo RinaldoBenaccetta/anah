@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   withYmlAndJsonSpecified: {
     datas: './test/fixtures/datas/**/*.{yml,json}',

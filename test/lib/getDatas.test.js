@@ -1,3 +1,5 @@
+'use strict'
+
 const getDatas = require('../../lib/getDatas')
 
 const fixture = require('../fixtures/lib/getDatas.fixture')

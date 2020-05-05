@@ -1,3 +1,5 @@
+'use strict'
+
 const mergeDatas = require('../../../lib/process/mergeDatas')
 
 const fixture = require('../../fixtures/lib/process/mergeDatas.fixture')

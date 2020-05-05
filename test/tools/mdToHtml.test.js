@@ -1,3 +1,5 @@
+'use strict'
+
 const mdToHtml = require('../../tools/mdToHtml')
 
 const fixture = require('../fixtures/tools/mdToHtml.fixture')

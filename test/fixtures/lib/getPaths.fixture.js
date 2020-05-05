@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   options: {
     pagesRoot: './html/pages/',

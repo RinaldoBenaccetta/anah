@@ -1,3 +1,5 @@
+'use strict'
+
 const expected = {
   footer:
     '<footer>\r\n    <div class="footer_class">I\'m a footer!</div>\r\n</footer>',

@@ -1,3 +1,5 @@
+'use strict'
+
 const readContent = require('../../tools/readContent')
 
 const expected = require('../expected/tools/readContent.expected')

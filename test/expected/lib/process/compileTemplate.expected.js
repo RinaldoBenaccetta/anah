@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   withValidProvidedLayout: {
     registerPartial: 'Hello {{ something }}!',

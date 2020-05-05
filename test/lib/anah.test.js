@@ -1,3 +1,5 @@
+'use strict'
+
 const anah = require('../../lib/anah')
 const fse = require('fs-extra')
 

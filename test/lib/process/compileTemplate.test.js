@@ -1,3 +1,5 @@
+'use strict'
+
 const compileTemplate = require('../../../lib/process/compileTemplate')
 const Handlebars = require('handlebars')
 

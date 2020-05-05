@@ -1,3 +1,5 @@
+'use strict'
+
 const getFileName = require('../../tools/getFileName')
 
 describe('getFileName', () => {

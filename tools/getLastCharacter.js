@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * Return the last character of a string.
  *

@@ -1,3 +1,5 @@
+'use strict'
+
 const render = require('../../../lib/process/render')
 const compileTemplate = require('../../../lib/process/compileTemplate')
 

@@ -1,3 +1,5 @@
+'use strict'
+
 const globby = require('globby')
 const getFileName = require('./getFileName')
 const log = require('../tools/logger')

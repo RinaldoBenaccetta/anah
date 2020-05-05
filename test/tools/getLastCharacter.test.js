@@ -1,3 +1,5 @@
+'use strict'
+
 const getLastCharacter = require('../../tools/getLastCharacter')
 
 describe('getLastCharacter', () => {

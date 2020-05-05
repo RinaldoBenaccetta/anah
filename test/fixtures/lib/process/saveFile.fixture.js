@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   withWriteOutput: {
     renderedPage: 'Hello world!',

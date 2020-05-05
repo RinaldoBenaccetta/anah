@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   content: {
     one: 'I am an hbs partial',

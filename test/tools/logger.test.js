@@ -1,3 +1,5 @@
+'use strict'
+
 const log = require('../../tools/logger')
 
 describe('logger', () => {

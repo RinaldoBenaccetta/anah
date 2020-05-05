@@ -1,3 +1,5 @@
+'use strict'
+
 const valid = {
   pages: './test/fixtures/pages/',
   partials: './test/fixtures/partials', // should deal with omitted end slash

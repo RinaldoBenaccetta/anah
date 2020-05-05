@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   withHelpersAndNoLibraries: {
     tobold: expect.any(Function),
