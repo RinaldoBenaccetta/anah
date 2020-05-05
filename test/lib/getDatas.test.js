@@ -11,17 +11,17 @@ describe('getDatas', () => {
     console.warn = jest.fn()
 
     const options = fixture.withYmlAndJsonSpecified
-    const datas = await getDatas(options)
+    const data = await getDatas(options)
 
-    expect(datas).toStrictEqual(expected.datasYmlAndJson)
+    expect(data).toStrictEqual(expected.datasYmlAndJson)
     expect(console.warn).toHaveBeenCalledTimes(2)
   })
 
   test('With provided data folder searching all files, return only datas from yml and json.', async () => {
     const options = fixture.withNoExtensionSpecified
-    const datas = await getDatas(options)
+    const data = await getDatas(options)
 
-    expect(datas).toStrictEqual(expected.datasYmlAndJson)
+    expect(data).toStrictEqual(expected.datasYmlAndJson)
   })
 
   test('With provided data folder that not contain data files, should log a warn.', async () => {
