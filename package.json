@@ -35,10 +35,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --no-cache --collectCoverageFrom=lib/**/*.js",
+    "test": "jest",
     "depcheck ": "depcheck",
     "testwatch": "jest --watchAll",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest && cat ./test/coverage/lcov.info | coveralls",
     "exp": "node experiment",
     "lint": "eslint . --fix",
     "license-check": "legally && tldrlegal"
