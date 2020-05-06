@@ -6,7 +6,7 @@ module.exports = {
     {
       path: './tmp/1.html',
       content:
-        '<title></title>\r\n<body>\r\n  [object Object]  \r\n</body>\r\n',
+        '<title></title>\r\n<body>\r\n  [object Object] <div class="bold">Here is a list of person :</div>\r\n\r\n<div class="unicorn">Joe is 25 years old.</div><div class="bold">Here is a list of person :</div>\r\n\r\n<div class="unicorn">Frank is 15 years old.</div><div class="bold">Here is a list of person :</div>\r\n\r\n<div class="unicorn">John is 45 years old.</div> \r\n</body>\r\n',
       data: {
         datas: { title: 'awesome title' },
         menu: {
