@@ -6,6 +6,8 @@ tmp
 
 coverage
 
-experiment.js
+*.experiment.js
 
 target
+
+test/coverage
