@@ -38,7 +38,7 @@
     "test": "jest",
     "depcheck ": "depcheck",
     "testwatch": "jest --watchAll",
-    "coveralls": "jest && cat ./test/coverage/lcov.info | coveralls",
+    "coveralls": "jest --silent && cat ./test/coverage/lcov.info | coveralls",
     "exp": "node experiment",
     "lint": "eslint . --fix",
     "license-check": "legally && tldrlegal"
