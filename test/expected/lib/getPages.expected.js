@@ -4,7 +4,7 @@ module.exports = {
   pages: [
     {
       content:
-        '{{#each persons}}\r\n    {{#tobold}}Here is a list of person :{{/tobold}}\r\n\r\n    {{#tofancy}}\r\n        {{>person person=.}}\r\n    {{/tofancy}}\r\n{{/each}}',
+        '{{#each names.persons}}\r\n{{#tobold}}Here is a list of person :{{/tobold}}\r\n\r\n{{#tofancy}}\r\n{{>person person=.}}\r\n{{/tofancy}}\r\n{{/each}}',
       data: {},
       path: './test/fixtures/pages/1.hbs'
     },

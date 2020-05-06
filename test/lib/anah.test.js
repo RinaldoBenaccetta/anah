@@ -1,6 +1,6 @@
 'use strict'
 
-const anah = require('../../lib/anah')
+const anah = require('../../index')
 const fse = require('fs-extra')
 
 const fixture = require('../fixtures/option')

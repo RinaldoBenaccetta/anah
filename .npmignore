@@ -1,0 +1,19 @@
+# ignore node_modules
+/node_modules
+
+# ignore gitignore
+.gitignore
+
+# ignore ide
+/.vscode
+/target
+
+# ignore test
+/test
+
+# ignore eslint
+.eslintignore
+.eslintrc.json
+
+#ignore package-lock
+package-lock.json
