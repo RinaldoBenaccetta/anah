@@ -1,10 +1,18 @@
 {
   "name": "anah",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "esm",
-  "description": "Tool for converting handlebars to html.",
+  "description": "Handlebars to HTML compiler that accept HTML and markdown source.",
   "keywords": [
-    "handlebars"
+    "handlebars",
+    "compiler",
+    "compile",
+    "html",
+    "markdown",
+    "yml",
+    "yaml",
+    "json",
+    "front-matter"
   ],
   "devDependencies": {
     "coveralls": "^3.1.0",
@@ -42,6 +50,10 @@
     "exp": "node experiment",
     "lint": "eslint . --fix",
     "license-check": "legally && tldrlegal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RinaldoBenaccetta/anah"
   },
   "author": "Rinaldo Benaccetta",
   "license": "MIT"
