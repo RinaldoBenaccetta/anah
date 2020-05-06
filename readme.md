@@ -99,7 +99,7 @@ title: I'm the title provided in front-matter of hello page!
 ---
 
 {{> hello}}
-path to holla : {{ global.root }}{{ names.pages_link.holla }}
+path to holla : {{ global.root }}{{ my_data.pages_link.holla }}
 ```
 
 pages/holla.md :
@@ -115,10 +115,10 @@ title: I'm the title provided in front-matter of holla page!
 partials/hello.md :
 
 ```markdown
-## Hello {{ names.who }} !
+## Hello {{ my_data.who }} !
 ```
 
-datas/names.json :
+datas/my_data.json :
 
 ```json
 {
@@ -146,7 +146,7 @@ datas/names.json :
 }
 ```
 
-data/names.yml :
+data/my_data.yml :
 
 ```yaml
 persons:
@@ -206,19 +206,17 @@ Returned output from _anah(options)_
     data: {
       // data accessible from template of hello
       title: "I'm the title provided in front-matter of hello page!",
-      names: {
+      my_data: {
         who: "John Doe",
         pages_link: {
           hello: "subFolder/hello.html",
           holla: "holla.html",
         },
-        names: {
-          persons: [
-            { name: "Joe", age: 25 }, // yaml files override json datas.
-            { name: "Frank", age: 15 }, // yaml files override json datas.
-          ],
-          dogs: [{ name: "Rex", age: 3 }],
-        },
+        persons: [
+          { name: "Joe", age: 25 }, // yaml files override json datas.
+          { name: "Frank", age: 15 }, // yaml files override json datas.
+        ],
+        dogs: [{ name: "Rex", age: 3 }],
       },
       layout: "default",
       global: { path: "subFolder/hello.html", depth: 1, root: "../" },
@@ -231,19 +229,17 @@ Returned output from _anah(options)_
     data: {
       // data accessible from template of holla
       title: "I'm the title provided in front-matter of holla page!",
-      names: {
+      my_data: {
         who: "John Doe",
         pages_link: {
           hello: "subFolder/hello.html",
           holla: "holla.html",
         },
-        names: {
-          persons: [
-            { name: "Joe", age: 25 }, // yaml files override json datas.
-            { name: "Frank", age: 15 }, // yaml files override json datas.
-          ],
-          dogs: [{ name: "Rex", age: 3 }],
-        },
+        persons: [
+          { name: "Joe", age: 25 }, // yaml files override json datas.
+          { name: "Frank", age: 15 }, // yaml files override json datas.
+        ],
+        dogs: [{ name: "Rex", age: 3 }],
       },
       layout: "default",
       global: { path: "holla.html", depth: 0, root: "" },
