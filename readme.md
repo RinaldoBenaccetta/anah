@@ -4,6 +4,12 @@
 
 Handlebars to HTML compiler that accept HTML and markdown source.
 
+## Install
+
+```
+$ npm install anah
+```
+
 ## Features
 
 - Allow for markdown as sources for layouts, pages and partials. (converted with [showdown](https://github.com/showdownjs/showdown))
