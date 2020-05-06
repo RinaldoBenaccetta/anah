@@ -99,7 +99,7 @@ title: I'm the title provided in front-matter of hello page!
 ---
 
 {{> hello}}
-path to holla : {{ global.root }}{{ pages_link.holla }}
+path to holla : {{ global.root }}{{ names.pages_link.holla }}
 ```
 
 pages/holla.md :
@@ -115,7 +115,7 @@ title: I'm the title provided in front-matter of holla page!
 partials/hello.md :
 
 ```markdown
-## Hello {{ who }} !
+## Hello {{ names.who }} !
 ```
 
 datas/names.json :
@@ -124,7 +124,7 @@ datas/names.json :
 {
   "who": "John Doe",
   "pages_link": {
-    "hello": "hello.html",
+    "hello": "subFolder/hello.html",
     "holla": "holla.html"
   },
   "persons": [
@@ -146,7 +146,7 @@ datas/names.json :
 }
 ```
 
-datas/names.yml :
+data/names.yml :
 
 ```yaml
 persons:
@@ -204,19 +204,23 @@ Returned output from _anah(options)_
     content:
       "<body>\r\n<h1>I'm the title provided in front-matter of hello page!</h1>\r\n<h2>Hello John Doe !</h2>\r\npath to holla : ../holla.html\r\n</body>\r\n",
     data: {
+      // data accessible from template of hello
       title: "I'm the title provided in front-matter of hello page!",
-      who: "John Doe",
-      pages_link: {
-        hello: "hello.html",
-        holla: "holla.html",
-      },
       names: {
-        persons: [
-          { name: "Joe", age: 25 }, // yaml files override json datas.
-          { name: "Frank", age: 15 }, // yaml files override json datas.
-        ],
-        dogs: [{ name: "Rex", age: 3 }],
+        who: "John Doe",
+        pages_link: {
+          hello: "subFolder/hello.html",
+          holla: "holla.html",
+        },
+        names: {
+          persons: [
+            { name: "Joe", age: 25 }, // yaml files override json datas.
+            { name: "Frank", age: 15 }, // yaml files override json datas.
+          ],
+          dogs: [{ name: "Rex", age: 3 }],
+        },
       },
+      layout: "default",
       global: { path: "subFolder/hello.html", depth: 1, root: "../" },
     },
   },
@@ -225,19 +229,23 @@ Returned output from _anah(options)_
     content:
       "<body>\r\n<h1>I'm the title provided in front-matter of holla page!</h1>\r\n<h2>Holla !</h2>\r\n</body>\r\n",
     data: {
+      // data accessible from template of holla
       title: "I'm the title provided in front-matter of holla page!",
-      who: "John Doe",
-      pages_link: {
-        hello: "hello.html",
-        holla: "holla.html",
-      },
       names: {
-        persons: [
-          { name: "Joe", age: 25 }, // yaml files override json datas.
-          { name: "Frank", age: 15 }, // yaml files override json datas.
-        ],
-        dogs: [{ name: "Rex", age: 3 }],
+        who: "John Doe",
+        pages_link: {
+          hello: "subFolder/hello.html",
+          holla: "holla.html",
+        },
+        names: {
+          persons: [
+            { name: "Joe", age: 25 }, // yaml files override json datas.
+            { name: "Frank", age: 15 }, // yaml files override json datas.
+          ],
+          dogs: [{ name: "Rex", age: 3 }],
+        },
       },
+      layout: "default",
       global: { path: "holla.html", depth: 0, root: "" },
     },
   },
