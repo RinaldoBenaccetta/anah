@@ -31,7 +31,7 @@ const options = {
   partials: "./html/partials",
   helpers: "./html/helpers",
   layouts: "./html/layouts",
-  datas: "./html/data",
+  data: "./html/data",
   output: "tmp",
 };
 
@@ -50,7 +50,7 @@ const options = {
   partials: "./html/partials",
   helpers: "./html/helpers",
   layouts: "./html/layouts",
-  datas: "./html/data",
+  data: "./html/data",
   output: "tmp",
   writeOutput: true, // true by default.
   helpersLibraries: [
@@ -118,7 +118,7 @@ partials/hello.md :
 ## Hello {{ my_data.who }} !
 ```
 
-datas/my_data.json :
+data/my_data.json :
 
 ```json
 {
@@ -164,7 +164,7 @@ const options = {
   partials: "./html/partials",
   helpers: "./html/helpers",
   layouts: "./html/layouts",
-  datas: "./html/data",
+  data: "./html/data",
   output: "tmp",
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "anah",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "esm",
   "description": "Handlebars to HTML compiler that accept HTML and markdown source.",
   "keywords": [
