@@ -18,4 +18,9 @@ describe('logger', () => {
     log.error('alert')
     expect(console.error).toHaveBeenCalled()
   })
+  test('Done with valid string, log', () => {
+    console.log = jest.fn()
+    log.done('alert')
+    expect(console.log).toHaveBeenCalled()
+  })
 })
