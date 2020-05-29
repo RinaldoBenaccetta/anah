@@ -321,7 +321,7 @@ The destination of the compiled pages.
 
 **Default** : true
 
-Writes or not the output to the destination folder.
+If true, allow to write the files to the destination folder in addition to return the data. Or just return the data if false.
 
 ##### helpersLibraries
 
