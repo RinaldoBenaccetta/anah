@@ -17,6 +17,16 @@ describe('getDatas', () => {
     expect(console.warn).toHaveBeenCalledTimes(2)
   })
 
+  test('With provided data folder and verbose false, expect no warning', async () => {
+    // mock console.warn
+    console.warn = jest.fn()
+
+    const options = fixture.withYmlAndJsonSpecifiedAndVerboseFalse
+
+    await getDatas(options)
+    expect(console.warn).not.toHaveBeenCalled()
+  })
+
   test('With provided data folder searching all files, return only datas from yml and json.', async () => {
     const options = fixture.withNoExtensionSpecified
     const data = await getDatas(options)
@@ -24,15 +34,26 @@ describe('getDatas', () => {
     expect(data).toStrictEqual(expected.datasYmlAndJson)
   })
 
-  test('With provided data folder that not contain data files, should log a warn.', async () => {
+  test('With provided data folder that not contain data files, with verbose at true, should log a warn.', async () => {
     // mock console.warn
     console.warn = jest.fn()
 
-    const options = fixture.withNoDataFolderSpecified
+    const options = fixture.withEmptyDataFolderSpecifiedAndVerboseTrue
 
     await getDatas(options)
 
     expect(console.warn).toHaveBeenCalled()
+  })
+
+  test('With provided data folder that not contain data files, with verbose at false, should not log a warn.', async () => {
+    // mock console.warn
+    console.warn = jest.fn()
+
+    const options = fixture.withEmptyDataFolderSpecifiedAndVerboseFalse
+
+    await getDatas(options)
+
+    expect(console.warn).not.toHaveBeenCalled()
   })
 
   test('With a provided data folder that contain the reserved data name global, throw an error.', () => {

@@ -7,15 +7,30 @@ module.exports = {
       data: ''
     }
   },
+  withYmlAndJsonSpecifiedAndVerboseFalse: {
+    data: './test/fixtures/datas/**/*.{yml,json}',
+    raw: {
+      verbose: false,
+      data: ''
+    }
+  },
   withNoExtensionSpecified: {
     data: './test/fixtures/datas/**/*',
     raw: {
       data: ''
     }
   },
-  withNoDataFolderSpecified: {
+  withEmptyDataFolderSpecifiedAndVerboseTrue: {
     data: './test/fixtures/datas/empty/**/*.{yml,json}',
     raw: {
+      verbose: true,
+      data: ''
+    }
+  },
+  withEmptyDataFolderSpecifiedAndVerboseFalse: {
+    data: './test/fixtures/datas/empty/**/*.{yml,json}',
+    raw: {
+      verbose: false,
       data: ''
     }
   },
