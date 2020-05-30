@@ -1,6 +1,6 @@
 'use strict'
 
-const getDatas = require('../../lib/getDatas')
+const getDatas = require('../../lib/getData')
 
 const fixture = require('../fixtures/lib/getDatas.fixture')
 const expected = require('../expected/lib/getDatas.expected')
@@ -39,5 +39,12 @@ describe('getDatas', () => {
     const options = fixture.withReservedDataFolder
 
     return expect(getDatas(options)).rejects.toThrow()
+  })
+  test('With a provided data folder and provided directData, returns the data with directData overwrite the first level of the folders ones.', async () => {
+    const options = fixture.withDirectData
+
+    const data = await getDatas(options)
+
+    expect(data).toStrictEqual(expected.JsonAndDirectData)
   })
 })

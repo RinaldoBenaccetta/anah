@@ -24,5 +24,29 @@ module.exports = {
     raw: {
       data: ''
     }
+  },
+  withDirectData: {
+    data: './test/fixtures/datas/**/*.json',
+    raw: {
+      data: '',
+      directData: {
+        names: {
+          persons: [
+            {
+              name: 'Sarah Connor',
+              age: 34
+            },
+            {
+              name: 'T-800',
+              age: 150
+            }
+          ]
+        },
+        someData: {
+          one: '1',
+          two: '2'
+        }
+      }
+    }
   }
 }
