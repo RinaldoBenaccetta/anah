@@ -9,7 +9,7 @@ const validOptions = fixture.valid
 const expected = require('../expected/lib/anah.expected')
 
 // mock fs-extra's outputFile function
-fse.outputFile = jest.fn()
+fse.outputFile = jest.fn(() => Promise.resolve())
 
 describe('anah', () => {
   test('With valid options and 6 pages on the provided pages options, save 6 pages.', async () => {

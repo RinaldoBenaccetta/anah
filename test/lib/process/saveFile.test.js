@@ -8,7 +8,8 @@ const expected = require('../../expected/lib/process/saveFile.expected')
 
 describe('saveFile', () => {
   // mock fs-extra's outputFile function
-  fse.outputFile = jest.fn()
+  fse.outputFile = jest.fn(() => Promise.resolve())
+
   test('with correct values, save the file and return the destination folder', async () => {
     await saveFile(
       fixture.withWriteOutput.renderedPage,

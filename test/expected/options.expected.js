@@ -16,6 +16,7 @@ module.exports = {
       output: './tmp/',
       pages: './test/fixtures/pages/',
       partials: './test/fixtures/partials',
+      verbose: false, // default
       writeOutput: true // default
     }
   },
@@ -35,6 +36,7 @@ module.exports = {
       output: './tmp',
       pages: './test/fixtures/pages',
       partials: './test/fixtures/partials',
+      verbose: false, // default,
       writeOutput: true // default
     }
   },
@@ -54,6 +56,7 @@ module.exports = {
       output: './tmp/',
       pages: './test/fixtures/pages/',
       partials: './test/fixtures/partials',
+      verbose: false, // default,
       writeOutput: false // user specified
     }
   }

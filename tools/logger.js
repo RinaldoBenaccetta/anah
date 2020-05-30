@@ -52,24 +52,30 @@ const logOutput = (level, message) => {
  * @function warning
  *
  * @description
- * Logs a formatted warning message.
+ * Logs a formatted warning message if verbose is true.
  *
  * @param {String} message
+ * @param {boolean} [verbose = true]
  */
-const warning = (message) => {
-  console.warn(logOutput('warning', message))
+const warning = (message, verbose = true) => {
+  if (verbose) {
+    console.warn(logOutput('warning', message))
+  }
 }
 
 /**
  * @function info
  *
  * @description
- * Logs a formatted info message.
+ * Logs a formatted info message if verbose is true.
  *
  * @param {String} message
+ * @param {boolean} [verbose = true]
  */
-const info = (message) => {
-  console.info(logOutput('info', message))
+const info = (message, verbose = true) => {
+  if (verbose) {
+    console.info(logOutput('info', message))
+  }
 }
 
 /**
@@ -88,12 +94,15 @@ const error = (message) => {
  * @function done
  *
  * @description
- * Logs a formatted done message.
+ * Logs a formatted done message if verbose is true.
  *
- * @param {String} message
+ * @param {String}  message
+ * @param {boolean} [verbose = true]
  */
-const done = (message) => {
-  console.log(logOutput('done', message))
+const done = (message, verbose = true) => {
+  if (verbose) {
+    console.log(logOutput('done', message))
+  }
 }
 
 module.exports = {
