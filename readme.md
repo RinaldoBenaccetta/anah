@@ -61,6 +61,11 @@ const options = {
       anotherAwesomeHelper: anotherAwesomeHelperFunction,
     },
   ],
+  directData: {
+    someData: {
+      myFirstData: "Hello"
+    }
+  }
   showdownOptions: {
     noHeaderId: true, // showdown options can be specified here.
   },
@@ -116,6 +121,8 @@ partials/hello.md :
 
 ```markdown
 ## Hello {{ who }} !
+
+{{ myData }}
 ```
 
 datas/names.json :
@@ -159,6 +166,7 @@ persons:
 index.js :
 
 ```javascript
+const adjective = "awesome";
 const options = {
   pages: "./html/pages",
   partials: "./html/partials",
@@ -166,6 +174,9 @@ const options = {
   layouts: "./html/layouts",
   datas: "./html/data",
   output: "tmp",
+  directData: {
+    myData: `This is an ${adjective} text!`,
+  },
 };
 
 const compile = async (options) => {
@@ -192,6 +203,7 @@ Write in tmp/holla.html :
 <body>
   <h1>I'm the title provided in front-matter of holla page!</h1>
   <h2>Holla</h2>
+  This is an awesome text!
 </body>
 ```
 
@@ -322,6 +334,15 @@ The destination of the compiled pages.
 **Default** : true
 
 If true, allow to write the files to the destination folder in addition to return the data. Or just return the data if false.
+
+##### directData
+
+**Type**: object
+
+Here, you can provide some data. These will override the ones from data folder.
+This can be useful for adding some computed data, data from an external API or from an headless CMS.
+
+The data provided in frontmatter will not be overridden.
 
 ##### helpersLibraries
 
