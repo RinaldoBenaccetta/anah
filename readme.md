@@ -337,6 +337,14 @@ const anOtherLibrary = require("an-other-library");
 options.helpersLibrary = [myLibrary, anOtherLibrary];
 ```
 
+##### verbose
+
+**Type** : boolean
+
+**Default** : false
+
+If true, show warnings and done operations.
+
 ##### showdownOptions
 
 **Type** : object
