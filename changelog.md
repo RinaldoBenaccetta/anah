@@ -10,3 +10,7 @@
 
 - Improved logs message.
 - Improve doc.
+
+### Fixed
+
+- Fix warning logs for duplicated data file and empty data folder.
