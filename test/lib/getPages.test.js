@@ -25,9 +25,12 @@ describe('getPages', () => {
     expect(pages).toStrictEqual(expected.pages)
   })
 
-  test('With no page folder provided, return null', async () => {
+  test('With no page folder provided, return null and warn.', async () => {
     const pages = await getPages(optionsWithoutPages)
 
+    console.warn = jest.fn()
+
     expect(pages).toBeNull()
+    expect(console.warn).toHaveBeenCalled()
   })
 })
