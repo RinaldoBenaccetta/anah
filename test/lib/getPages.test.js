@@ -5,8 +5,14 @@ const getPages = require('../../lib/getPages')
 const expected = require('../expected/lib/getPages.expected')
 
 // ! folders must be from root of the module and not from the test himself.
-const options = {
+const optionsWithPages = {
   pages: './test/fixtures/pages/**/*.{hbs,html,md}',
+  raw: {
+    showdownOptions: {}
+  }
+}
+
+const optionsWithoutPages = {
   raw: {
     showdownOptions: {}
   }
@@ -14,8 +20,14 @@ const options = {
 
 describe('getPages', () => {
   test('Given a path return an object with content and path of the file.', async () => {
-    const pages = await getPages(options)
+    const pages = await getPages(optionsWithPages)
 
     expect(pages).toStrictEqual(expected.pages)
+  })
+
+  test('With no page folder provided, return null', async () => {
+    const pages = await getPages(optionsWithoutPages)
+
+    expect(pages).toBeNull()
   })
 })
