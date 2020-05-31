@@ -21,7 +21,7 @@ describe('logger', () => {
   test("Info with valid string, and verbose false doesn't log an info", () => {
     console.info = jest.fn()
     log.info('alert', false)
-    expect(console.warn).not.toHaveBeenCalled()
+    expect(console.info).not.toHaveBeenCalled()
   })
   test('Error with valid string, log error', () => {
     console.error = jest.fn()
@@ -36,6 +36,6 @@ describe('logger', () => {
   test("Done with valid string, and verbose false doesn't log a log", () => {
     console.log = jest.fn()
     log.done('alert', false)
-    expect(console.warn).not.toHaveBeenCalled()
+    expect(console.log).not.toHaveBeenCalled()
   })
 })
