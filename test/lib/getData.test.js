@@ -61,11 +61,34 @@ describe('getDatas', () => {
 
     return expect(getDatas(options)).rejects.toThrow()
   })
+
   test('With a provided data folder and provided directData, returns the data with directData overwrite the first level of the folders ones.', async () => {
     const options = fixture.withDirectData
 
     const data = await getDatas(options)
 
     expect(data).toStrictEqual(expected.JsonAndDirectData)
+  })
+
+  test('With a provided data folder and directData that is not an object, and verbose at true, log a warning.', async () => {
+    // mock console.warn
+    console.warn = jest.fn()
+
+    const options = fixture.withDirectDataThatIsNotAnObjectAndVerboseTrue
+
+    await getDatas(options)
+
+    expect(console.warn).toHaveBeenCalledTimes(1)
+  })
+
+  test('With a provided data folder and directData that is not an object, and verbose at false, log a warning.', async () => {
+    // mock console.warn
+    console.warn = jest.fn()
+
+    const options = fixture.withDirectDataThatIsNotAnObjectAndVerboseFalse
+
+    await getDatas(options)
+
+    expect(console.warn).not.toHaveBeenCalled()
   })
 })

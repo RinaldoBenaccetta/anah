@@ -63,5 +63,20 @@ module.exports = {
         }
       }
     }
+  },
+  withDirectDataThatIsNotAnObjectAndVerboseTrue: {
+    data: './test/fixtures/datas/**/*.json',
+    raw: {
+      data: '',
+      directData: 42
+    }
+  },
+  withDirectDataThatIsNotAnObjectAndVerboseFalse: {
+    data: './test/fixtures/datas/**/*.json',
+    raw: {
+      verbose: false,
+      data: '',
+      directData: 42
+    }
   }
 }
