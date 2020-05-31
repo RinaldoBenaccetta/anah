@@ -23,12 +23,4 @@ describe('saveFile', () => {
       expected.outputFile.renderedPage
     )
   })
-
-  test('with writeOutput to false, write nothing', async () => {
-    await saveFile(
-      fixture.withoutWriteOutput.renderedPage,
-      fixture.withoutWriteOutput.destination,
-      fixture.withoutWriteOutput.options
-    )
-  })
 })
