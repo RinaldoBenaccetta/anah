@@ -9,6 +9,16 @@ const valid = {
   output: './tmp/'
 }
 
+const validWithWriteOutputFalse = {
+  writeOutput: false,
+  pages: './test/fixtures/pages/',
+  partials: './test/fixtures/partials', // should deal with omitted end slash
+  layouts: './test/fixtures/layouts/',
+  helpers: './test/fixtures/helpers',
+  data: './test/fixtures/datas/',
+  output: './tmp/'
+}
+
 const validWithDefaultOverride = {
   pages: './test/fixtures/pages/',
   partials: './test/fixtures/partials', // should deal with omitted end slash
@@ -29,6 +39,15 @@ const validWithOmittedSlash = {
 }
 
 const validWithoutPagesFolder = {
+  partials: './test/fixtures/partials',
+  layouts: './test/fixtures/layouts',
+  helpers: './test/fixtures/helpers',
+  data: './test/fixtures/datas',
+  output: './tmp'
+}
+
+const validWithoutPagesFolderAndVerboseTrue = {
+  verbose: true,
   partials: './test/fixtures/partials',
   layouts: './test/fixtures/layouts',
   helpers: './test/fixtures/helpers',
@@ -170,5 +189,7 @@ module.exports = {
   invalid,
   validWithDefaultOverride,
   validWithOmittedSlash,
-  validWithoutPagesFolder
+  validWithoutPagesFolder,
+  validWithoutPagesFolderAndVerboseTrue,
+  validWithWriteOutputFalse
 }
