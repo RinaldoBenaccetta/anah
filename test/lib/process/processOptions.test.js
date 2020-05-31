@@ -24,17 +24,25 @@ describe('processOptions', () => {
     ).resolves.toStrictEqual(expected.user)
   })
 
-  test.each([fixture.invalid.omitedPath])(
+  test.each(fixture.invalid.omitedPath)(
     'with omitted values throw an error',
-    (options) => {
-      return expect(processOptions(options)).rejects.toThrow()
+    async (options) => {
+      await expect(processOptions(options)).rejects.toThrow()
     }
   )
 
-  test.each([fixture.invalid.invalidPath])(
+  test.each(fixture.invalid.invalidPath)(
     'with invalid values throw an error',
     (options) => {
       return expect(processOptions(options)).rejects.toThrow()
     }
   )
+
+  test('With no path provided, must return pageRoot equal to ./', async () => {
+    const processedOptions = await processOptions(
+      fixture.validWithoutPagesFolder
+    )
+
+    expect(processOptions(processedOptions.pagesRoot)).resolves.toBe('./')
+  })
 })
