@@ -43,6 +43,6 @@ describe('processOptions', () => {
       fixture.validWithoutPagesFolder
     )
 
-    expect(processOptions(processedOptions.pagesRoot)).resolves.toBe('./')
+    return expect(processedOptions.pagesRoot).toBe('./')
   })
 })
