@@ -57,4 +57,13 @@ describe('getDirectPages', () => {
     expect(directPages).toStrictEqual(expected.withInvalidData)
     expect(console.warn).not.toBeCalled()
   })
+
+  test('With items in direct pages that are not object and verbose true, warn and do not return theses items.', async () => {
+    const directPages = await getDirectPages(
+      fixture.withInvalidItemsInDirectPages
+    )
+
+    expect(directPages).toStrictEqual(expected.withInvalidItemsInDirectPages)
+    expect(console.warn).toBeCalledTimes(3)
+  })
 })

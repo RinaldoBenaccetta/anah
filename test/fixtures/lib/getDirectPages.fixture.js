@@ -27,6 +27,21 @@ module.exports = {
       ]
     }
   },
+  withInvalidItemsInDirectPages: {
+    raw: {
+      verbose: true,
+      directPages: [
+        '42',
+        42,
+        null,
+        {
+          content: 'testPage!',
+          data: { title: 'testPage', layout: 'myAwsomeLayout' },
+          path: 'subfolder/testPage'
+        }
+      ]
+    }
+  },
   withInvalidPath: {
     raw: {
       verbose: true,

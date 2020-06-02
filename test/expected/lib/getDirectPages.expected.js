@@ -23,6 +23,13 @@ module.exports = {
       path: 'voidPage'
     }
   ],
+  withInvalidItemsInDirectPages: [
+    {
+      content: 'testPage!',
+      data: { title: 'testPage', layout: 'myAwsomeLayout' },
+      path: 'subfolder/testPage'
+    }
+  ],
   withInvalidPath: [
     {
       content: 'testPage!',
