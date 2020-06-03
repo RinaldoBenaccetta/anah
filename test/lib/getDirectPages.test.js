@@ -9,14 +9,14 @@ describe('getDirectPages', () => {
   test('With directPages that is not an array, warn a message and return nothing.', async () => {
     const directPages = await getDirectPages(fixture.notAnArray)
 
-    expect(directPages).toBeNull()
+    expect(directPages).toStrictEqual([])
     expect(console.warn).toBeCalledTimes(1)
   })
 
   test('With directPages that is not an array and verbose to false, warn nothing  a message and return nothing.', async () => {
     const directPages = await getDirectPages(fixture.notAnArrayWithVerboseFalse)
 
-    expect(directPages).toBeNull()
+    expect(directPages).toStrictEqual([])
     expect(console.warn).not.toBeCalled()
   })
 

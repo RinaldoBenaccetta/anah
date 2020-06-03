@@ -17,7 +17,7 @@ describe('getFolderPages', () => {
   test('With no page folder provided and no direct pages, return null', async () => {
     const pages = await getFolderPages(fixture.optionsWithoutPages)
 
-    expect(pages).toBeNull()
+    expect(pages).toStrictEqual([])
   })
 
   // test('With no page folder provided and directPages that is not an array, return null and warn if verbose is true', async () => {
