@@ -23,10 +23,6 @@ describe('getDatas', () => {
 
     const options = fixture.withYmlAndJsonSpecifiedAndVerboseFalse
 
-    console.log('log: --------------------')
-    console.log('log: options', options)
-    console.log('log: --------------------')
-
     await getDatas(options)
     expect(console.warn).not.toHaveBeenCalled()
   })

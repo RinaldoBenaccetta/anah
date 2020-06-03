@@ -14,6 +14,8 @@ fse.outputFile = jest.fn(() => Promise.resolve())
 console.warn = jest.fn()
 log.warning = jest.fn()
 
+// TODO : test with directData
+
 describe('anah', () => {
   test('With nothing to render and verbose true, log a warning and return null.', async () => {
     const build = await anah(fixture.validWithoutPagesFolderAndVerboseTrue)
@@ -34,8 +36,8 @@ describe('anah', () => {
     expect(console.warn).not.toHaveBeenCalled()
   })
 
-  test('With valid options and 6 pages on the provided pages options, render 6 pages, return them in an object and saves them.', async () => {
-    const build = await anah(validOptions)
+  test('With valid options and 6 pages on the provided pages options and 2 pages in directPages, render 8 pages, return them in an object and saves them.', async () => {
+    const build = await anah(fixture.validWithDirectPages)
 
     expect(build).toStrictEqual(expected.output)
     expect(fse.outputFile).toHaveBeenCalledTimes(expected.pageNumber)

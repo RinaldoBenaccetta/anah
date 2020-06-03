@@ -9,6 +9,27 @@ const valid = {
   output: './tmp/'
 }
 
+const validWithDirectPages = {
+  pages: './test/fixtures/pages/',
+  partials: './test/fixtures/partials', // should deal with omitted end slash
+  layouts: './test/fixtures/layouts/',
+  helpers: './test/fixtures/helpers',
+  data: './test/fixtures/datas/',
+  output: './tmp/',
+  directPages: [
+    {
+      content: 'firstPage!',
+      data: { title: 'testPage' },
+      path: 'subfolder/testPage'
+    },
+    {
+      content: 'secondPage',
+      data: { title: 'two' },
+      path: 'secondPage'
+    }
+  ]
+}
+
 const validWithWriteOutputFalse = {
   writeOutput: false,
   pages: './test/fixtures/pages/',
@@ -191,5 +212,6 @@ module.exports = {
   validWithOmittedSlash,
   validWithoutPagesFolder,
   validWithoutPagesFolderAndVerboseTrue,
-  validWithWriteOutputFalse
+  validWithWriteOutputFalse,
+  validWithDirectPages
 }
