@@ -4,12 +4,15 @@
 
 ### Added
 
+- Add directData in options. This allow to pass some computed data, data from an external API, database, headless CMS,...
+- Add directPages in options. This allow to pass some computed pages based on external API, database, headless CMS,...
 - Add verbose mode. false by default.
 
 ### Changed
 
-- Improved logs message.
-- Improve doc.
+- Improved log messages.
+- Improved doc.
+- pages in options became optional as pages can be provided directly.
 
 ### Fixed
 
