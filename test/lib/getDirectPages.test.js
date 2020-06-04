@@ -20,10 +20,11 @@ describe('getDirectPages', () => {
     expect(console.warn).not.toBeCalled()
   })
 
-  test('With Valid provided directPages and verbose true, return directPages with no warning', async () => {
+  test('With Valid provided directPages but invalid content, and verbose true, return directPages, invalid content corrected to empty string and warn 7 times because there is 7 invalid content.', async () => {
     const directPages = await getDirectPages(fixture.valid)
 
     expect(directPages).toStrictEqual(expected.valid)
+    expect(console.warn).toBeCalledTimes(7)
   })
 
   test('With pages containing invalid path and verbose true, return directPages without these pages and warn for theses pages.', async () => {

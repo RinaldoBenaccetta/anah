@@ -23,6 +23,33 @@ module.exports = {
         {
           data: { title: 'void page', layout: 'myAwsomeLayout' },
           path: 'voidPage'
+        },
+        {
+          content: () => {
+            return 'hello'
+          },
+          data: { title: 'function page', layout: 'myAwsomeLayout' },
+          path: 'functionPage'
+        },
+        {
+          content: false,
+          data: { title: 'false page', layout: 'myAwsomeLayout' },
+          path: 'falsePage'
+        },
+        {
+          content: ['one',
+            'two',
+            'three'],
+          data: { title: 'array page', layout: 'myAwsomeLayout' },
+          path: 'arrayPage'
+        },
+        {
+          content: {
+            one: 'one',
+            two: 'two'
+          },
+          data: { title: 'object page', layout: 'myAwsomeLayout' },
+          path: 'objectPage'
         }
       ]
     }

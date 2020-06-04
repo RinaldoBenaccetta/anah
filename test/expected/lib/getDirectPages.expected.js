@@ -8,7 +8,7 @@ module.exports = {
       path: 'subfolder/testPage'
     },
     {
-      content: 42,
+      content: '',
       data: { title: 'page 42', layout: 'myAwsomeLayout' },
       path: '42'
     },
@@ -21,6 +21,26 @@ module.exports = {
       content: '',
       data: { title: 'void page', layout: 'myAwsomeLayout' },
       path: 'voidPage'
+    },
+    {
+      content: '',
+      data: { title: 'function page', layout: 'myAwsomeLayout' },
+      path: 'functionPage'
+    },
+    {
+      content: '',
+      data: { title: 'false page', layout: 'myAwsomeLayout' },
+      path: 'falsePage'
+    },
+    {
+      content: '',
+      data: { title: 'array page', layout: 'myAwsomeLayout' },
+      path: 'arrayPage'
+    },
+    {
+      content: '',
+      data: { title: 'object page', layout: 'myAwsomeLayout' },
+      path: 'objectPage'
     }
   ],
   withInvalidItemsInDirectPages: [
