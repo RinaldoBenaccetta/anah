@@ -9,7 +9,6 @@ branches:
 cache:
   directories:
     - node_modules
-    - test
 before_install:
   - npm update
 install:

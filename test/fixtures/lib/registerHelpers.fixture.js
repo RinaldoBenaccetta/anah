@@ -24,6 +24,14 @@ module.exports = {
     }
   },
 
+  withHelpersAndNoLibrariesAndVerboseToFalse: {
+    helpers: './test/fixtures/lib/registerHelpers/**/*.js',
+    raw: {
+      verbose: false,
+      helpers: './test/fixtures/lib/registerHelpers/'
+    }
+  },
+
   withHelpersAndLibraries: {
     helpers: './test/fixtures/lib/registerHelpers/**/*.js',
     raw: {

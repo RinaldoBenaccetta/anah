@@ -23,6 +23,14 @@ describe('registerHelpers', () => {
     expect(console.warn).toHaveBeenCalledTimes(1)
   })
 
+  test('With helpers and verbose set false, do not log a warning.', async () => {
+    const options = fixture.withHelpersAndNoLibrariesAndVerboseToFalse
+
+    await registerHelpers(options)
+
+    expect(console.warn).not.toHaveBeenCalled()
+  })
+
   test('With valid helpers libraries option, with one that have same names than in the helpers path, and with two helpers in path that have same names, should warn two times, and register the helpers.', async () => {
     const options = fixture.withHelpersAndLibraries
 

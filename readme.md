@@ -13,13 +13,15 @@ $ npm install anah
 
 ## Features
 
-- Allows for markdown as source for layouts, pages and partials. (converted with [showdown](https://github.com/showdownjs/showdown))
-- Uses front-matter on both HTML and markdown sources. (parsed with [gray-matter](https://github.com/jonschlinkert/gray-matter))
+- Allow for markdown as sources for layouts, pages and partials. (converted with [showdown](https://github.com/showdownjs/showdown))
+- Use front-matter on both HTML and markdown sources. (parsed with [gray-matter](https://github.com/jonschlinkert/gray-matter))
+- Possibility to pass data in options of anah function. This can be useful to add data from database, external API, headless CMS...
+- Possibility to pass pages in options of anah function. This can be useful to add computed pages based on database, external API, headless CMS...
 - Handlebar's features also useable in markdown files.
-- Allows for json and yaml files for data.
-- Outputs an array of objects representing each compiled page with its destination path, content and data.
-- Saves the compiled pages in the destination folder.
-- The processed page's global data are accessible from template files : path from root, sub-folders depth from root and root prefix for menus.
+- Allow for json and yaml files for data.
+- Output an array of objects representing each compiled pages with their destination path, content and data.
+- Save the compiled pages in destination folder.
+- Processed page's global data accessible from template files : path from root, sub-folders depth from root, root prefix for menus.
 
 ## Quick example
 
@@ -61,6 +63,32 @@ const options = {
       anotherAwesomeHelper: anotherAwesomeHelperFunction,
     },
   ],
+  directData: {
+    // computed data, external API data, headless cms data or others can be specified here
+    someData: {
+      myFirstData: "Hello",
+      mySecondData: "world!",
+    },
+    anotherData: 42,
+  },
+  directPages: [
+    // computed pages, external API pages, headless cms pages or others can be specified here
+    {
+      content: "test page!",
+      data: {
+        title: "test page",
+        layout: "myAwsomeLayout",
+      },
+      path: "testfolder/test",
+    },
+    {
+      content: "hello {{you}}",
+      data: {
+        you: "John Doe",
+      },
+      path: "people/john",
+    },
+  ],
   showdownOptions: {
     noHeaderId: true, // showdown options can be specified here.
   },
@@ -91,6 +119,14 @@ layouts/default.html :
 </body>
 ```
 
+layouts/myAwesomeLayout.html :
+
+```html
+<title>{{title}}</title>
+
+{{> body }}
+```
+
 pages/subFolder/hello.hbs :
 
 ```handlebars
@@ -115,7 +151,9 @@ title: I'm the title provided in front-matter of holla page!
 partials/hello.md :
 
 ```markdown
-## Hello {{ my_data.who }} !
+## Hello {{ who }} !
+
+{{ myData }}
 ```
 
 data/my_data.json :
@@ -159,6 +197,7 @@ persons:
 index.js :
 
 ```javascript
+const adjective = "awesome";
 const options = {
   pages: "./html/pages",
   partials: "./html/partials",
@@ -166,6 +205,16 @@ const options = {
   layouts: "./html/layouts",
   data: "./html/data",
   output: "tmp",
+  directData: {
+    myData: `This is an ${adjective} text!`,
+  },
+  directPages: [
+    {
+      content: '<div class="awesome">{{myData}}</div>',
+      data: { title: "awesome page", layout: "myAwesomeLayout" },
+      path: "subFolder/awesome",
+    },
+  ],
 };
 
 const compile = async (options) => {
@@ -192,7 +241,15 @@ Writes in tmp/holla.html :
 <body>
   <h1>I'm the title provided in front-matter of holla page!</h1>
   <h2>Holla</h2>
+  This is an awesome text!
 </body>
+```
+
+Write in tmp/subFolder/awesome.html :
+
+```html
+<title>awesome page</title>
+<div class="awesome">This is an awesome text!</div>
 ```
 
 Returned output from _anah(options)_
@@ -218,7 +275,7 @@ Returned output from _anah(options)_
         ],
         dogs: [{ name: "Rex", age: 3 }],
       },
-      layout: "default",
+      myData: `This is an awesome text!`,
       global: { path: "subFolder/hello.html", depth: 1, root: "../" },
     },
   },
@@ -241,8 +298,30 @@ Returned output from _anah(options)_
         ],
         dogs: [{ name: "Rex", age: 3 }],
       },
-      layout: "default",
+      myData: `This is an awesome text!`,
       global: { path: "holla.html", depth: 0, root: "" },
+    },
+  },
+  {
+    path: "./tmp/subFolder/awesome.html",
+    content:
+      '<title>awesome page</title>\r\n<div class="awesome">This is an awesome text!</div>\r\n',
+    data: {
+      title: "awesome page",
+      layout: "myAwesomeLayout",
+      pages_link: {
+        hello: "hello.html",
+        holla: "holla.html",
+      },
+      names: {
+        persons: [
+          { name: "Joe", age: 25 }, // yaml files override json datas.
+          { name: "Frank", age: 15 }, // yaml files override json datas.
+        ],
+        dogs: [{ name: "Rex", age: 3 }],
+      },
+      myData: `This is an awesome text!`,
+      global: { path: "subFolder/awesome.html", depth: 1, root: "../" },
     },
   },
   // other pages ...
@@ -251,13 +330,15 @@ Returned output from _anah(options)_
 
 The output path will reproduce the path found in pages folder.
 By default, the output will be written to the output folder provided in options.
-The data are the ones found in the data folder merged with the front-matter data of the pages. Global data are calculated by Anah and can be used in templates.
+The datas are these found in the datas folder and directData merged with the frontmatter datas of the pages or these provided in directPages. Global datas are calculated by Anah and can be used in templates.
 
-#### Options
+### Options
 
-##### pages
+#### pages
 
 **Type** : string
+
+**Optional**
 
 The pages folder.
 The pages can be markdown or HTML.
@@ -274,7 +355,7 @@ layout: myLayout
 Hello world!
 ```
 
-##### partials
+#### partials
 
 **Type** : string
 
@@ -283,7 +364,7 @@ The pages can be markdown or HTML.
 
 Files with .md, .html and .hbs extensions are accepted, others will be ignored.
 
-##### helpers
+#### helpers
 
 **Type** : string
 
@@ -291,7 +372,7 @@ The helpers folder.
 
 Files with .js extensions are accepted, others will be ignored.
 
-##### layouts
+#### layouts
 
 **Type** : string
 
@@ -302,16 +383,18 @@ Files with .md, .html and .hbs extension are accepted, others will be ignored.
 
 There must at least be one layout named _default_ in the folder.
 
-##### datas
+Layout can be specified in frontmatter of pages or in data from directPages.
+
+#### data
 
 **Type** : string
 
-The datas folder.
-The data can be json or yaml files. If two files with same names, one in json and the other one in yaml exist, they will be mixed, but the values in yaml will override the json values.
+The data folder.
+The data can be json or yaml files. If files with same names but one in json and the other in yaml, they will be mixed, but values in yaml will override the json values.
 
 Data files can't be named _global_ ( E.g. : global.yml or global.json).
 
-##### output
+#### output
 
 **Type** : string
 
@@ -319,17 +402,90 @@ The output folder.
 
 The destination of the compiled pages.
 
-##### writeOutput
+#### writeOutput
 
 **Type**: boolean
 
 **Default** : true
 
-Writes or not the output to the destination folder.
+If true, allow to write the files to the destination folder in addition to return the data. Or just return the data if false.
 
-##### helpersLibraries
+#### directData
+
+**Type**: object
+
+**Optional**
+
+Here, you can provide some data. These will override the ones from data folder.
+This can be useful for adding some computed data, data from an external API or from an headless CMS.
+
+The data provided in frontmatter will not be overridden.
+
+#### directPages
+
+**Type** object[]
+
+**Optional**
+
+Here, you can provide some pages. This can be useful for adds some computed pages based on external API, database or from an headless CMS.
+
+It can be possible to make something like this :
+
+```javascript
+const productPages = (productsFromApi) => {
+  const output = [];
+  for (const item of productsFromApi) {
+    output.push(
+      {
+        content: '<div>product name = {{name}}</div>',
+        data: {
+          name: item.name
+        },
+        path: `products/${item.name}`
+      }
+    )
+  }
+  return output;
+};
+
+const options = {
+  directPages = productPages,
+  // other options...
+};
+
+const compile = async (options) => {
+  await anah(options).catch((error) => console.error(error));
+};
+
+compile(options);
+
+```
+
+##### Object properties
+
+###### content
+
+**Type** string
+
+The content in HTML Handlebars.
+
+###### data
+
+**Type** object
+
+The data for this page. Same as frontmatter for pages in path.
+
+###### path
+
+**Type** string
+
+The path of the destination file, relative to the provided output option.
+
+#### helpersLibraries
 
 **Type**: object[]
+
+**Optional**
 
 Here, you can add your helpers libraries modules. They can be accessed in templates the same way than your helpers from the helpers folder.
 
@@ -341,9 +497,19 @@ const anOtherLibrary = require("an-other-library");
 options.helpersLibrary = [myLibrary, anOtherLibrary];
 ```
 
-##### showdownOptions
+#### verbose
+
+**Type** : boolean
+
+**Default** : false
+
+If true, show warnings and done operations.
+
+#### showdownOptions
 
 **Type** : object
+
+**Optional**
 
 The default options are the default options from showdown.
 

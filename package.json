@@ -1,18 +1,22 @@
 {
   "name": "anah",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "type": "esm",
   "description": "Handlebars to HTML compiler that accept HTML and markdown source.",
   "keywords": [
     "handlebars",
     "compiler",
     "compile",
+    "compilation",
     "html",
     "markdown",
     "yml",
     "yaml",
     "json",
-    "front-matter"
+    "front-matter",
+    "headless",
+    "external",
+    "website"
   ],
   "devDependencies": {
     "coveralls": "^3.1.0",
@@ -44,10 +48,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "depcheck ": "depcheck",
     "testwatch": "jest --watchAll",
     "coveralls": "jest --silent && cat ./test/coverage/lcov.info | coveralls",
-    "exp": "node experiment",
     "lint": "eslint . --fix",
     "license-check": "legally && tldrlegal"
   },

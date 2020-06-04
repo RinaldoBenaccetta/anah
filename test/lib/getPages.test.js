@@ -2,20 +2,31 @@
 
 const getPages = require('../../lib/getPages')
 
+const fixture = require('../fixtures/lib/getPages.fixture')
 const expected = require('../expected/lib/getPages.expected')
 
-// ! folders must be from root of the module and not from the test himself.
-const options = {
-  pages: './test/fixtures/pages/**/*.{hbs,html,md}',
-  raw: {
-    showdownOptions: {}
-  }
-}
-
 describe('getPages', () => {
-  test('Given a path return an object with content and path of the file.', async () => {
-    const pages = await getPages(options)
+  test('With folderPages and directPages, return them togheter.', async () => {
+    const pages = await getPages(fixture.valid)
 
-    expect(pages).toStrictEqual(expected.pages)
+    expect(pages).toStrictEqual(expected.valid)
+  })
+
+  test('With empty folderPages and populated directPages, return directPages.', async () => {
+    const pages = await getPages(fixture.validWithEmptyFolder)
+
+    expect(pages).toStrictEqual(expected.validWithEmptyFolder)
+  })
+
+  test('With not empty folderPages and no directPages, return folderPages.', async () => {
+    const pages = await getPages(fixture.validWithNoDirectPages)
+
+    expect(pages).toStrictEqual(expected.validWithNoDirectPages)
+  })
+
+  test('With empty folderPages and no directPages, return empty array.', async () => {
+    const pages = await getPages(fixture.validWithNoDirectPagesAndEmptyFolder)
+
+    expect(pages).toStrictEqual([])
   })
 })

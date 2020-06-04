@@ -7,15 +7,30 @@ module.exports = {
       data: ''
     }
   },
+  withYmlAndJsonSpecifiedAndVerboseFalse: {
+    data: './test/fixtures/datas/**/*.{yml,json}',
+    raw: {
+      verbose: false,
+      data: ''
+    }
+  },
   withNoExtensionSpecified: {
     data: './test/fixtures/datas/**/*',
     raw: {
       data: ''
     }
   },
-  withNoDataFolderSpecified: {
+  withEmptyDataFolderSpecifiedAndVerboseTrue: {
     data: './test/fixtures/datas/empty/**/*.{yml,json}',
     raw: {
+      verbose: true,
+      data: ''
+    }
+  },
+  withEmptyDataFolderSpecifiedAndVerboseFalse: {
+    data: './test/fixtures/datas/empty/**/*.{yml,json}',
+    raw: {
+      verbose: false,
       data: ''
     }
   },
@@ -23,6 +38,45 @@ module.exports = {
     data: './test/fixtures/datas-reserved/**/*.{yml,json}',
     raw: {
       data: ''
+    }
+  },
+  withDirectData: {
+    data: './test/fixtures/datas/**/*.json',
+    raw: {
+      data: '',
+      directData: {
+        names: {
+          persons: [
+            {
+              name: 'Sarah Connor',
+              age: 34
+            },
+            {
+              name: 'T-800',
+              age: 150
+            }
+          ]
+        },
+        someData: {
+          one: '1',
+          two: '2'
+        }
+      }
+    }
+  },
+  withDirectDataThatIsNotAnObjectAndVerboseTrue: {
+    data: './test/fixtures/datas/**/*.json',
+    raw: {
+      data: '',
+      directData: 42
+    }
+  },
+  withDirectDataThatIsNotAnObjectAndVerboseFalse: {
+    data: './test/fixtures/datas/**/*.json',
+    raw: {
+      verbose: false,
+      data: '',
+      directData: 42
     }
   }
 }
