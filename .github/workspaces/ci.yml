@@ -1,0 +1,40 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI Pipeline
+
+# trigger build when pushing, or when creating a pull request
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    # run build on latest ubuntu
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # Run build for Node version 12, 14 and version 16
+        node-version: [ 12.x, 14.x, 16.x ]
+
+    steps:
+      # this will check out the current branch (https://github.com/actions/checkout#Push-a-commit-using-the-built-in-token)
+      - uses: actions/checkout@v2
+      # installing Node
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          # this is regarding the matrix strategy specified above
+          node-version: ${{ matrix.node-version }}
+      # install dependencies using clean install to avoid package lock updates
+      - run: npm ci
+      # build the project if necessary
+      - run: npm run build --if-present
+      # finally run the tests
+      - run: npm run coverage
+      # Send coverage report to Coveralls
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+

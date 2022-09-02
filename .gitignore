@@ -13,3 +13,5 @@ target
 test/coverage
 
 todo.md
+
+.idea
