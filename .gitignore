@@ -15,3 +15,5 @@ test/coverage
 todo.md
 
 .idea
+
+.coveralls.yml
