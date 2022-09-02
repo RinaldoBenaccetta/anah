@@ -17,6 +17,7 @@ jobs:
           node-version: 10.x
 
       - name: npm install
+        run: npm install
 
       - name: npm run coverage
         run: npm run coverage
