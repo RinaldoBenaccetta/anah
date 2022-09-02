@@ -49,7 +49,7 @@
     "scripts": {
         "test": "jest",
         "testwatch": "jest --watchAll",
-        "coverage": "jest --silent && cat ./coverage/lcov.info | coveralls",
+        "coverage": "jest --silent && cat ./test/coverage/lcov.info | coveralls",
         "lint": "eslint . --fix",
         "license-check": "legally && tldrlegal"
     },
