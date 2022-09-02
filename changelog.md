@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1]
+
+### Fixed
+
+- Fix dependencies vulnerabilities.
+
 ## [1.1.0]
 
 ### Added
