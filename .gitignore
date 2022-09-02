@@ -11,3 +11,9 @@ coverage
 target
 
 test/coverage
+
+todo.md
+
+.idea
+
+.coveralls.yml

@@ -1,62 +1,62 @@
 {
-  "name": "anah",
-  "version": "1.1.0",
-  "type": "esm",
-  "description": "Handlebars to HTML compiler that accept HTML and markdown source.",
-  "keywords": [
-    "handlebars",
-    "compiler",
-    "compile",
-    "compilation",
-    "html",
-    "markdown",
-    "yml",
-    "yaml",
-    "json",
-    "front-matter",
-    "headless",
-    "external",
-    "website"
-  ],
-  "devDependencies": {
-    "coveralls": "^3.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "latest",
-    "eslint-plugin-import": "latest",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "latest",
-    "eslint-plugin-standard": "latest",
-    "jest": "latest",
-    "jest-cli": "latest",
-    "legally": "^3.5.2",
-    "prettier": "latest",
-    "prettier-eslint": "latest",
-    "tldrlegal": "^1.0.11"
-  },
-  "dependencies": {
-    "chalk": "^4.0.0",
-    "fs-extra": "^9.0.0",
-    "globby": "^11.0.0",
-    "gray-matter": "^4.0.2",
-    "handlebars": "^4.7.6",
-    "is-valid-path": "^0.1.1",
-    "load-json-file": "^6.2.0",
-    "load-yaml-file": "^0.2.0",
-    "showdown": "^1.9.1",
-    "typical": "^6.0.0"
-  },
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "testwatch": "jest --watchAll",
-    "coveralls": "jest --silent && cat ./test/coverage/lcov.info | coveralls",
-    "lint": "eslint . --fix",
-    "license-check": "legally && tldrlegal"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RinaldoBenaccetta/anah"
-  },
-  "author": "Rinaldo Benaccetta",
-  "license": "MIT"
+    "name": "anah",
+    "version": "1.1.1",
+    "type": "esm",
+    "description": "Handlebars to HTML compiler that accept HTML and markdown source.",
+    "keywords": [
+        "handlebars",
+        "compiler",
+        "compile",
+        "compilation",
+        "html",
+        "markdown",
+        "yml",
+        "yaml",
+        "json",
+        "front-matter",
+        "headless",
+        "external",
+        "website"
+    ],
+    "devDependencies": {
+        "coveralls": "^3.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-standard": "latest",
+        "eslint-plugin-import": "latest",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "latest",
+        "eslint-plugin-standard": "latest",
+        "jest": "latest",
+        "jest-cli": "latest",
+        "legally": "^3.5.2",
+        "prettier": "latest",
+        "prettier-eslint": "latest",
+        "tldrlegal": "^1.0.11"
+    },
+    "dependencies": {
+        "chalk": "^4.0.0",
+        "fs-extra": "^9.0.0",
+        "globby": "^11.0.0",
+        "gray-matter": "^4.0.2",
+        "handlebars": "^4.7.6",
+        "is-valid-path": "^0.1.1",
+        "load-json-file": "^6.2.0",
+        "load-yaml-file": "^0.2.0",
+        "showdown": "^1.9.1",
+        "typical": "^6.0.0"
+    },
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "testwatch": "jest --watchAll",
+        "coverage": "jest --silent && cat ./test/coverage/lcov.info | coveralls",
+        "lint": "eslint . --fix",
+        "license-check": "legally && tldrlegal"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RinaldoBenaccetta/anah"
+    },
+    "author": "Rinaldo Benaccetta",
+    "license": "MIT"
 }
