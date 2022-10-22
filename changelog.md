@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2]
+
+### Fixed
+
+- Fix bug.
+
 ## [1.1.1]
 
 ### Fixed
