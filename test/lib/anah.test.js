@@ -5,7 +5,6 @@ const log = require('../../tools/logger')
 const fse = require('fs-extra')
 
 const fixture = require('../fixtures/option')
-const validOptions = fixture.valid
 
 const expected = require('../expected/lib/anah.expected')
 

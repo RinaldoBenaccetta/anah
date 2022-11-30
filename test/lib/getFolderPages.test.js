@@ -19,13 +19,4 @@ describe('getFolderPages', () => {
 
     expect(pages).toStrictEqual([])
   })
-
-  // test('With no page folder provided and directPages that is not an array, return null and warn if verbose is true', async () => {
-  //   const pages = await getFolderPages(
-  //     fixture.optionsWithoutPagesAndDirectPagesThatIsNotAnObject
-  //   )
-
-  //   expect(pages).toBeNull()
-  //   expect(console.warn).toBeCalledTimes(1)
-  // })
 })
