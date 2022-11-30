@@ -5,6 +5,7 @@
 ### Fixed
 
 - Fix bug.
+- Add unwanted files in npmignore.
 
 ## [1.1.1]
 

@@ -7,6 +7,7 @@
 # ignore ide
 /.vscode
 /target
+.idea
 
 # ignore test
 /test
@@ -15,5 +16,8 @@
 .eslintignore
 .eslintrc.json
 
-#ignore package-lock
+# ignore package-lock
 package-lock.json
+
+# ignore experimentations
+ *.experiment.js
